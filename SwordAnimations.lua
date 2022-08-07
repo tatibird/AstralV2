@@ -1,10 +1,10 @@
 Animations = {
 	["1_7_Autoblock"] = {
-		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0},
-		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-3), math.rad(84), math.rad(-0)), Time = 0.02},
-		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(49), math.rad(65), math.rad(-53)), Time = 0.02},
-		{CFrame = CFrame.new(-0.01, -0.01, -4.52) * CFrame.Angles(math.rad(57), math.rad(38), math.rad(-62)), Time = 0.02},
-		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0.02}
+		{CFrame = CFrame.new(0.67, -1.89, -4.46) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0},
+		{CFrame = CFrame.new(0.49, -2, -4.35) * CFrame.Angles(math.rad(-3), math.rad(84), math.rad(-0)), Time = 0.02},
+		{CFrame = CFrame.new(0.38, -1.74, -4.2) * CFrame.Angles(math.rad(49), math.rad(65), math.rad(-53)), Time = 0.02},
+		{CFrame = CFrame.new(0.38, -1.74, -4.2) * CFrame.Angles(math.rad(71), math.rad(38), math.rad(-71)), Time = 0.02},
+		{CFrame = CFrame.new(0.67, -1.89, -4.46) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0.02}
 	},
 	["Astral"] = {
 		{
