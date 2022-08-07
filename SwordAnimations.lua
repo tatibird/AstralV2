@@ -1,21 +1,10 @@
 Animations = {
 	["1_7_Autoblock"] = {
-		{
-			CFrame = CFrame.new(-0.01, -0.01, -1.01) * CFrame.Angles(math.rad(-128), math.rad(65), math.rad(125)),
-			Time = 0
-		},
-		{
-			CFrame = CFrame.new(-0.01, -0.01, -1.01) * CFrame.Angles(math.rad(78), math.rad(81), math.rad(-85)),
-			Time = 0.03
-		},
-		{
-			CFrame = CFrame.new(-0.01, -0.02, -1.02) * CFrame.Angles(math.rad(39), math.rad(42), math.rad(-58)),
-			Time = 0.03
-		},
-		{
-			CFrame = CFrame.new(-0.01, -0.01, -1.01) * CFrame.Angles(math.rad(-128), math.rad(65), math.rad(125)),
-			Time = 0.03
-		}
+		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0},
+		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-3), math.rad(84), math.rad(-0)), Time = 0.02},
+		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(49), math.rad(65), math.rad(-53)), Time = 0.02},
+		{CFrame = CFrame.new(-0.01, -0.01, -4.52) * CFrame.Angles(math.rad(57), math.rad(38), math.rad(-62)), Time = 0.02},
+		{CFrame = CFrame.new(-0.01, -0.01, -4.51) * CFrame.Angles(math.rad(-105), math.rad(70), math.rad(103)), Time = 0.02}
 	},
 	["Astral"] = {
 		{
