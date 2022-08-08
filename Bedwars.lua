@@ -1,10 +1,10 @@
 local lp = game:GetService("Players").LocalPlayer
 
-function gremote(tab)
-    for i, v in pairs(tab) do
+function getremote(t)
+    for i, v in pairs(t) do
         if v == "Client" then
-            local t = tab[i + 1]
-            return t
+            local tab = t[i + 1]
+            return tab
         end
     end
     return ""
@@ -22,7 +22,15 @@ Bedwars = {
         [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
         [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
     },
-    AttackRemote = Client:Get(gremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"]))),
+    PickUpItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.PickupItemDrop,
+    ChestObserve = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:SetObservedChest"],
+    ChestGet = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGetItem"],
+    ChestGive = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGiveItem"],
+    GroundHit = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit,
+    DropRemote = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.DropItem,
+    AbilityRemote = game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility,
+    AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"]))),
+    PurchaseItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem,
 }
 
 return Bedwars
