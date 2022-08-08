@@ -1,3 +1,7 @@
+repeat task.wait() until game:IsLoaded()
+
+local origneck = game.Players.LocalPlayer.Character.Head.Neck.C0
+
 local Bedwars = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Bedwars.lua", true))()
 
 Utility = {
@@ -44,6 +48,17 @@ Utility = {
             end
         end
         return bestsword
+    end,    
+    Rotation = function(Position)
+        local targetPos = Position
+        local Head = game.Players.LocalPlayer.Character.Head
+        local dir = (targetPos - Head.Position).Unit
+        local Character = game.Players.LocalPlayer.Character
+        local lookCFrame = CFrame.new(Vector3.new(), Character.PrimaryPart.CFrame:VectorToObjectSpace(dir))
+        game.Players.LocalPlayer.Character.Head.Neck.C0 = lookCFrame + Vector3.new(0,.75,0)
+    end,
+    ResetRotation = function()
+        game.Players.LocalPlayer.Character.Head.Neck.C0 = origneck 
     end,
 }
 
