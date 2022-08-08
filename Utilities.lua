@@ -2,7 +2,7 @@ local Bedwars = loadstring(game:HttpGet("https://raw.githubusercontent.com/Masta
 
 Utility = {
     Predict = function(player)
-        return player.Character.HumanoidRootPart.Position + (player.Character.HumanoidRootPart.Velocity * 0.05)
+        return player.Character.HumanoidRootPart.Position + (player.Character.HumanoidRootPart.Velocity * 0.075)
     end,
     GetNearbyPlayers = function(range,addself)
         local nearby = {}
