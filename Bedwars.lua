@@ -1,3 +1,5 @@
+repeat task.wait() until game:IsLoaded()
+
 local lp = game:GetService("Players").LocalPlayer
 
 function getremote(t)
