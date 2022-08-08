@@ -13,6 +13,13 @@ Utility = {
         end
         return nearby
     end,
+    IsAlive = function(Entity)
+        if Entity and Entity.PrimaryPart and Entity:FindFirstChild("Humanoid") and Entity.Humanoid.Health > 0 then
+            return true
+        else
+            return false
+        end
+    end,
 }
 
 return Utility
