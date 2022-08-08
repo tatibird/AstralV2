@@ -1,10 +1,10 @@
 local lp = game:GetService("Players").LocalPlayer
 
-function getremote(t)
-    for i, v in pairs(t) do
+function gremote(tab)
+    for i, v in pairs(tab) do
         if v == "Client" then
-            local tab = t[i + 1]
-            return tab
+            local t = tab[i + 1]
+            return t
         end
     end
     return ""
@@ -22,7 +22,7 @@ Bedwars = {
         [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
         [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
     },
-    AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))
+    AttackRemote = Client:Get(gremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"]))),
 }
 
 return Bedwars
