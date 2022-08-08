@@ -142,13 +142,18 @@ local UILibrary = {
 			local entered = false
 
 			local found = false
+			local counted = 0
 			local function SaveSettings()
 				for i,v in pairs(Modules) do
 					if v.Name == Module.Name then
+						counted = counted + 1
 						found = true
 						Module.Enabled = v.Enabled
 						Module.Bind = v.Bind
 						Module.Dropdowns = v.Dropdowns
+						if counted > 1 then
+							table.remove(i)
+						end
 					end
 				end
 				Save()
