@@ -10,6 +10,9 @@ function getremote(t)
     return ""
 end
 
+local KnitClient = debug.getupvalue(require(lp.PlayerScripts.TS.knit).setup, 6)
+local Client = require(game:GetService"ReplicatedStorage".TS.remotes).default.Client
+
 Bedwars = {
     SwordInfo = {
         [1] = { Name = "wood_sword", Display = "Wood Sword", Rank = 1 },
@@ -19,8 +22,6 @@ Bedwars = {
         [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
         [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
     },
-    KnitClient = debug.getupvalue(require(lp.PlayerScripts.TS.knit).setup, 6),
-    Client = require(game:GetService"ReplicatedStorage".TS.remotes).default.Client,
     AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))
 }
 
