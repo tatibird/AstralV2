@@ -1,3 +1,5 @@
+repeat task.wait() until game:IsLoaded()
+
 Animations = {
 	["1_7_Autoblock"] = {CFrame = CFrame.new(-0.01, -3.51, -2.01) * CFrame.Angles(math.rad(-180), math.rad(85), math.rad(-180)), Time = 0},
 	["Astral"] = {
