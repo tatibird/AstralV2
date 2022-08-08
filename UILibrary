@@ -165,7 +165,11 @@ local UILibrary = {
 				table.insert(Modules,Module)
 			end
 
-			SaveSettings()
+			spawn(function()
+				while wait(5) do
+					SaveSettings()
+				end
+			end)
 
 			newbutton.MouseEnter:Connect(function()
 				entered = true
