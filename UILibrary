@@ -1,3 +1,475 @@
 repeat task.wait() until game:IsLoaded()
 
-local N={"/OoymkJ=";"/rK8uGfve4KhqR==","nGnbt5D0mGKHNC==";"qOo0mnoZei==","ekoSmrQ+tGnFu3Ug";"JrDymGJ=";"Fkf2qn/yYi==","D8/1MFfJF3gHd4yQ","MligqX1UMi==";"e4KHqGnHJrgWqnPUIGnh","d4n8t3o6sGn6qXPgm4eiqkw9";"7kwCt3/fm4/gqR==","FkK+drnXt3/8mrbQ/GKAmi==","nGfl";"YrK6Yrf8";"e4fLurtHmAn6qf/HYkwSdGfHqkwLIe==";"FkK+drnXt3/8mrbQ";"7rnwerK9qe==","7GKrq3oZnJ9=","YrQym3R=";"sXRie4g6qE1im4K6qe==";"FkK+drnNqkfrqe==","nGKOqrQg","e3D8d4fherK6q4gO";"JGKSu3/Umrb=";"nGnbtfyPmGgOm4+gmOe=";"nZoymODCY3ogm4Dw","FGn4tR==";"erKHqJt+ue==","nGnbt5QyY4nh","sXRiJZogdANiY7P2q390q3DLY3PgsZ/0sZogmkKrqe==","FGgOuZ/Um4d=";"ukwSq3o8","JrfrqJwymkJ=","trfUtR==","/Zo0dG/0trwZnJ9=";"7fn5erKhmAs=","Fkf2qJ+0qZnhqe==";"e4Q+d9n4q4nLtR==";"FkK+drnXt3/8mrbQerQUYrh=","";"7kg+ek/9kJfpJO5=","7fn5ekwUmkf8ukK6dC==";"sXRie4g6qE1i","/4K6tR==","n3Dgd9g6dZn8nZgCqe==";"kR==","d4f6qGKv","FkK+drnXt3/8mrbHerQUYrh=","FkK+drnfmO/gdi==";"JrnhqkD8ukK6";"t3PCq3s=","e4fLurtHmAn6q5D0mGKHNC==";"/GnSYAoUdZ/Umrb=";"nGnbtfDUI4J=";"/rK8uGfvJrnvuko0mGe=","nGnbt5o+tZ/0mi==";"F4fvqe==","/kwyY4QgqR==","ekwLuGKHJGKUmOe=","sR==","ke==","J4gOuZ/FuGg4tR==";"MlR=","J81+Fft9FGtSFFNb7i==","7Z/8dfDgdOqUYrJ=","d4K+m4e=","Y9tjJSNH74NAJGU2JZJ=","JrDHqkn6/AnU";"JrgWqe==","F4BiYrK6q4gOt3oytGg0mlPSY3qgsZtydHP4mAn6qX5=";"JrQUqGnH","tkwCYkD2","sfDgmGnLtGn9sG+0qGJWsR==","qOo0mJyFni==","/Zo0dG/0trwS";"e4Q+d9f6uk+ytGg0mON=","nGnbtR==";"mGn6","e4g6qR==";"j4Q+Ye==","/3DLY3Pg","/+no","/On6YA/Umrb=","JrfrqJ/gq4f+mZe=","ekoSmrQ+tGnemADUtGg0mi==";"n3Dgd9g6dZn8JrnHt4gLqe==";"sXR=";"m4nA","7kwCt3/Xqktymi==","Mi==";"qr+ytGD1"}local function X(t)return N[t-25515]end for t,Q in ipairs({{1;92};{1,66};{67,92}})do while Q[1]<Q[2]do N[Q[1]],N[Q[2]],Q[1],Q[2]=N[Q[2]],N[Q[1]],Q[1]+1,Q[2]-1 end end do local t={j=11,S=51,c=59;l=34;J=20,["9"]=36;q=25;d=28;["1"]=40;o=9,i=32,P=1;Y=24,["/"]=17,Q=49,["+"]=53;k=22,["0"]=47,G=6;Z=7,s=8,v=45,h=44,w=57;t=29,a=31;u=26,V=42;U=41;K=61,n=21;L=35;m=27;g=37;["3"]=23,x=10,T=63,H=50;["8"]=52,E=3,M=14;R=0,D=13;["5"]=4,X=2,A=55;C=48,f=5;e=16,W=58;["2"]=43,p=15;F=19;O=39,y=33;["7"]=18,z=62,["4"]=38,N=12,B=60,b=56,r=54;I=30,["6"]=46}local Q=string.len local c=string.char local o=N local d=string.sub local Z=math.floor local H=table.insert local Y=type local z=table.concat for F=1,#o,1 do local s=o[F]if Y(s)=="string"then local Y=Q(s)local N={}local X=1 local C=0 local L=0 while X<=Y do local Q=d(s,X,X)local o=t[Q]if o then C=C+o*64^(3-L)L=L+1 if L==4 then L=0 local t=Z(C/65536)local Q=Z((C%65536)/256)local o=C%256 H(N,c(t,Q,o))C=0 end elseif Q=="="then H(N,c(Z(C/65536)))if X>=Y or d(s,X+1,X+1)~="="then H(N,c(Z((C%65536)/256)))end break end X=X+1 end o[F]=z(N)end end end do local t=true local Q=string[X(25581)]local c=function()error(X(25592))end local o=false local d=pcall(function()o=true end)and o local Z=math[X(25537)]local H=table[X(25596)]local Y=table and table[X(25562)]or unpack local z=Z(3,65)local F=0 local s=0 local N={pcall(function()local t=11953517-X(25589)^7922418 return X(25557)/t end)}local C=N[2]local L=tonumber((Q(tostring(C),X(25590)))())for c=1,z,1 do local o=math[X(25537)](1,100)local d=Z(0,255)local H=Z(1,o)local N=Z(1,2)==1 local m=C:gsub(X(25590),X(25580)..(tostring(Z(0,10000))..X(25580)))local j={pcall(function()if Z(1,2)==1 or c==z then local c=tonumber((Q(tostring(({pcall(function()local t=10250041-X(25531)^7125722 return X(25554)/t end)})[2]),X(25590)))())t=t and L==c end if N then error(m,0)end local F={}for t=1,o,1 do F[t]=Z(0,255)end F[H]=d return Y(F)end)}if N then t=t and(j[1]==false and j[2]==m)else t=t and j[1]F=(F+j[H+1])%256 s=(s+d)%256 end end t=t and F==s if t then else repeat return(function()while true do l1,l2=l2,l1 c()end end)()until true while true do l2=Z(1,6)if l2>2 then l2=tostring(l1)else l1=l2 end end return end end;(getgenv())[X(25572)]=Instance[X(25578)](X(25558),game:GetService(X(25518)));(getgenv())[X(25526)]=Color3[X(25585)](150,0,240);(getgenv())[X(25532)]=true;(getgenv())[X(25566)]=true;(getgenv())[X(25574)]=X(25605);(getgenv())[X(25572)][X(25548)]=false;(getgenv())[X(25523)]=(getgenv())[X(25574)]..X(25570);(getgenv())[X(25526)]=Color3[X(25585)](13,105,172)Modules={}local t=0 local Q={}local c=game:GetService(X(25576))local o=game:GetService(X(25555))local d=Instance[X(25578)](X(25528),game:GetService(X(25521)))d[X(25548)]=false local function Z()local t=o:JSONEncode(Modules)writefile((getgenv())[X(25523)],t)end local function H()if isfile((getgenv())[X(25523)])then local t=readfile((getgenv())[X(25523)])local Q=o:JSONDecode(t)Modules=Q else warn(X(25560))end end local function Y(t,Q)local c=Instance[X(25578)](X(25582),t)c[X(25559)]=UDim2[X(25578)](0,0,1,0)c[X(25591)]=0 c[X(25516)]=.5 for t=1,100,1 do task[X(25524)](Q/2500)c[X(25559)]=c[X(25559)]+UDim2[X(25578)](.01,0,0,0)c[X(25516)]=c[X(25516)]+.005 end c:Destroy()end local function z(t)local Q,c,o=t:ToHSV()o=math[X(25601)](o/2,.5,.5)return Color3[X(25564)](Q,c,o)end local F=false c[X(25579)]:Connect(function()if c:IsKeyDown(Enum[X(25599)][X(25552)])and F==false then if(getgenv())[X(25566)]then spawn(function()task[X(25524)](.15)if(getgenv())[X(25572)][X(25548)]==true then d[X(25559)]=1 d[X(25548)]=not d[X(25548)]for t=1,50,1 do task[X(25524)]()d[X(25559)]=d[X(25559)]+.3 end else for t=1,50,1 do task[X(25524)]()d[X(25559)]=d[X(25559)]-.3 end d[X(25548)]=not d[X(25548)]end end)end;(getgenv())[X(25572)][X(25548)]=not(getgenv())[X(25572)][X(25548)]end end)local s={[X(25588)]=function(c)local o=Instance[X(25578)](X(25582),(getgenv())[X(25572)])local d=Instance[X(25578)](X(25582),o)local Z=Instance[X(25578)](X(25519),o)o[X(25559)]=UDim2[X(25578)](.13,0,.0365,0)o[X(25606)]=UDim2[X(25578)](.03+.135*t,0,.025,0)o[X(25591)]=0 o[X(25542)]=Color3[X(25585)](35,35,35)d[X(25559)]=UDim2[X(25578)](1,0,.065,0)d[X(25591)]=0 Z[X(25597)]=1 Z[X(25567)]=c Z[X(25534)]=Enum[X(25534)][X(25583)]Z[X(25584)]=Color3[X(25585)](255,255,255)Z[X(25559)]=UDim2[X(25578)](1,0,.7,0)Z[X(25544)]=Z[X(25586)][X(25536)]*.09 Z[X(25606)]=UDim2[X(25578)](0,0,.2,0)spawn(function()while task[X(25524)]()do d[X(25542)]=(getgenv())[X(25526)]end end)t=t+1 table[X(25522)](Q,o)return o end;[X(25527)]=function(t)spawn(function()local Q=false local o=t[X(25595)]local d=t[X(25547)]local H=false local F=t[X(25543)]local s=0 for Q,c in pairs(Modules)do if c[X(25547)]==t[X(25547)]then t[X(25548)]=c[X(25548)]t[X(25569)]=c[X(25569)]t[X(25565)]=c[X(25565)]end end local N={[X(25525)]={},[X(25600)]={}}for t,Q in pairs(t[X(25565)])do s=s+1 end local C=Instance[X(25578)](X(25582),o)local L=Instance[X(25578)](X(25546),C)C[X(25559)]=UDim2[X(25578)](1,0,1,0)C[X(25591)]=0 C[X(25542)]=Color3[X(25585)](42,42,42)C[X(25606)]=UDim2[X(25578)](0,0,#o:GetChildren()-2,0)L[X(25559)]=UDim2[X(25578)](1,0,1,0)L[X(25597)]=1 L[X(25567)]=X(25550)..d L[X(25544)]=L[X(25586)][X(25536)]*.075 L[X(25534)]=Enum[X(25534)][X(25545)]L[X(25584)]=Color3[X(25585)](255,255,255)if t[X(25548)]==true then spawn(function()while t[X(25548)]==true do C[X(25542)]=(getgenv())[X(25526)]task[X(25524)]()spawn(function()t[X(25573)](t,t[X(25565)])end)end end)else C[X(25542)]=Color3[X(25585)](42,42,42)end L[X(25607)]=X(25517)local m=false local function j()for Q,c in pairs(Modules)do if c[X(25547)]==t[X(25547)]then c[X(25548)]=t[X(25548)]c[X(25569)]=t[X(25569)]c[X(25565)]=t[X(25565)]end end Z()end L[X(25539)]:Connect(function()m=true local Q=Instance[X(25578)](X(25582),(getgenv())[X(25572)])Q[X(25559)]=UDim2[X(25578)](.00435*string[X(25568)](F),0,.055,0)Q[X(25591)]=0 Q[X(25542)]=Color3[X(25585)](35,35,35)local o=Instance[X(25578)](X(25519),Q)o[X(25559)]=UDim2[X(25578)](1,0,.35,0)o[X(25606)]=UDim2[X(25578)](0,0,.025,0)o[X(25534)]=Enum[X(25534)][X(25583)]o[X(25597)]=1 o[X(25567)]=X(25577)..(d..X(25580))o[X(25607)]=X(25517)o[X(25584)]=Color3[X(25585)](255,255,255)o[X(25544)]=o[X(25586)][X(25551)]*.9 local Z=Instance[X(25578)](X(25519),Q)Z[X(25559)]=UDim2[X(25578)](1,0,.5,0)Z[X(25606)]=UDim2[X(25578)](0,0,.5,0)Z[X(25534)]=Enum[X(25534)][X(25545)]Z[X(25597)]=1 Z[X(25567)]=X(25577)..F Z[X(25607)]=X(25517)Z[X(25584)]=Color3[X(25585)](255,255,255)Z[X(25544)]=o[X(25586)][X(25551)]*.8 table[X(25522)](N[X(25600)],Q)local H=Instance[X(25578)](X(25582),Q)H[X(25559)]=UDim2[X(25578)](.4/string[X(25568)](F),0,1,0)H[X(25591)]=0 repeat if m then Q[X(25606)]=UDim2[X(25578)](0,(c:GetMouseLocation())[X(25536)],0,(c:GetMouseLocation())[X(25551)])H[X(25542)]=(getgenv())[X(25526)]if t[X(25548)]then Q[X(25542)]=z((getgenv())[X(25526)])else Q[X(25542)]=Color3[X(25585)](30,30,30)end end task[X(25524)]()until not m end)L[X(25603)]:Connect(function()m=false for t,Q in pairs(N[X(25600)])do Q:Destroy()end end)L[X(25529)]:Connect(function()spawn(function()Y(L,.45)end)if t[X(25548)]==false then t[X(25548)]=true spawn(function()spawn(function()while t[X(25548)]==true do C[X(25542)]=(getgenv())[X(25526)]task[X(25524)]()end end)t[X(25573)](t,t[X(25565)])end)else t[X(25548)]=false task[X(25524)](.1)C[X(25542)]=Color3[X(25585)](42,42,42)t[X(25548)]=false end end)c[X(25579)]:Connect(function(c)if t[X(25569)]and(c[X(25599)]==Enum[X(25599)][string[X(25541)](t[X(25569)])]and Q==false)then spawn(function()Y(L,.45)end)if t[X(25548)]==false then t[X(25548)]=true spawn(function()spawn(function()while t[X(25548)]==true do C[X(25542)]=(getgenv())[X(25526)]task[X(25524)]()end end)t[X(25573)](t,t[X(25565)])end)else t[X(25548)]=false task[X(25524)](.1)C[X(25542)]=Color3[X(25585)](42,42,42)t[X(25548)]=false end j()end end)L[X(25538)]:Connect(function()spawn(function()Y(L,.45)end)if H==false then local d=0 H=true local Z=Instance[X(25578)](X(25582),L)table[X(25522)](N[X(25525)],Z)Z[X(25542)]=Color3[X(25585)](56,56,56)Z[X(25559)]=UDim2[X(25578)](1,0,s+1,0)Z[X(25591)]=0 Z[X(25606)]=UDim2[X(25578)](0,0,1,0)for t,Q in pairs(o:GetChildren())do if Q:IsA(X(25582))and Q[X(25606)][X(25551)][X(25587)]>C[X(25606)][X(25551)][X(25587)]then Q[X(25606)]=Q[X(25606)]+UDim2[X(25578)](0,0,s+1,0)end end for t,Q in pairs(t[X(25565)])do d=d+1 local o=Instance[X(25578)](X(25582),L)o[X(25597)]=1 o[X(25559)]=UDim2[X(25578)](1,0,1,0)o[X(25606)]=UDim2[X(25578)](0,0,d,0)table[X(25522)](N[X(25525)],o)local Z=Q[1]local H=Q[2]if Q[1]==X(25561)then local t=Q[3]local d=Q[4]local Z=Q[5]local H=Instance[X(25578)](X(25519),o)local Y=Instance[X(25578)](X(25546),o)local z=Instance[X(25578)](X(25546),Y)H[X(25559)]=UDim2[X(25578)](.9,0,.375,0)H[X(25606)]=UDim2[X(25578)](.05,0,.1,0)H[X(25597)]=1 H[X(25607)]=X(25517)H[X(25544)]=H[X(25586)][X(25536)]*.06 H[X(25584)]=Color3[X(25585)](255,255,255)H[X(25534)]=Enum[X(25534)][X(25545)]H[X(25567)]=Q[2]..(X(25553)..math[X(25556)](Z))Y[X(25559)]=UDim2[X(25578)](.9,0,.25,0)Y[X(25542)]=Color3[X(25585)](30,30,30)Y[X(25606)]=UDim2[X(25578)](.05,0,.7,0)Y[X(25591)]=0 z[X(25559)]=UDim2[X(25578)](Z/d,0,1,0)z[X(25591)]=0 z[X(25567)]=X(25530)Y[X(25567)]=X(25530)spawn(function()while task[X(25524)]()do z[X(25542)]=(getgenv())[X(25526)]end end)local F=false Y[X(25594)]:Connect(function()F=true repeat task[X(25524)]()local t=c:GetMouseLocation()local o=t-z[X(25575)]local d=math[X(25601)](o[X(25536)]/Y[X(25586)][X(25536)],0,1)z[X(25559)]=UDim2[X(25578)](d,0,1,0)Q[5]=z[X(25559)][X(25536)][X(25587)]*Q[4]H[X(25567)]=Q[2]..(X(25553)..math[X(25556)](Q[5]))until F==false j()end)z[X(25594)]:Connect(function()F=true repeat task[X(25524)]()local t=c:GetMouseLocation()local o=t-z[X(25575)]local d=math[X(25601)](o[X(25536)]/Y[X(25586)][X(25536)],0,1)z[X(25559)]=UDim2[X(25578)](d,0,1,0)Q[5]=z[X(25559)][X(25536)][X(25587)]*Q[4]H[X(25567)]=Q[2]..(X(25553)..math[X(25556)](Q[5]))until F==false j()end)c[X(25593)]:Connect(function(t)if t[X(25535)]==Enum[X(25535)][X(25598)]then F=false end end)z[X(25559)]=UDim2[X(25578)](Q[5]/Q[4],0,1,0)elseif Q[1]==X(25604)then local t=Q[3]local c=Instance[X(25578)](X(25546),o)c[X(25559)]=UDim2[X(25578)](.95,0,1,0)c[X(25606)]=UDim2[X(25578)](.015,0,0,0)c[X(25544)]=c[X(25586)][X(25536)]*.06 c[X(25607)]=X(25517)c[X(25597)]=1 c[X(25567)]=X(25577)..H c[X(25584)]=Color3[X(25585)](255,255,255)c[X(25534)]=Enum[X(25534)][X(25545)]local d=Instance[X(25578)](X(25582),c)d[X(25559)]=UDim2[X(25578)](.15,0,.435,0)d[X(25549)]=Vector2[X(25578)](.5,.5)d[X(25591)]=0 d[X(25606)]=UDim2[X(25578)](.9,0,.5,0)d[X(25542)]=Color3[X(25585)](30,30,30)local Z=Instance[X(25578)](X(25582),d)Z[X(25559)]=UDim2[X(25578)](.35,0,1,0)Z[X(25591)]=0 if Q[3]then spawn(function()repeat task[X(25524)]()d[X(25542)]=z((getgenv())[X(25526)])until Q[3]==false end)end spawn(function()while task[X(25524)]()do Z[X(25542)]=(getgenv())[X(25526)]end end)if Q[3]==true then Z[X(25606)]=UDim2[X(25578)](.65,0,0,0)end c[X(25529)]:Connect(function()if Q[3]==false then Q[3]=true for t=1,50,1 do if math[X(25537)](1,3)==1 then task[X(25524)]()end Z[X(25606)]=Z[X(25606)]+UDim2[X(25578)](.019,0,0,0)end Z[X(25606)]=UDim2[X(25578)](.65,0,0,0)spawn(function()repeat task[X(25524)]()d[X(25542)]=z((getgenv())[X(25526)])until Q[3]==false end)else Q[3]=false for t=1,50,1 do if math[X(25537)](1,3)==1 then task[X(25524)]()end Z[X(25606)]=Z[X(25606)]-UDim2[X(25578)](.019,0,0,0)end Z[X(25606)]=UDim2[X(25578)](0,0,0,0)d[X(25542)]=Color3[X(25585)](30,30,30)end j()end)elseif Q[1]==X(25540)then local t=Instance[X(25578)](X(25546),o)t[X(25559)]=UDim2[X(25578)](.9,0,.65,0)t[X(25597)]=0 t[X(25549)]=Vector2[X(25578)](.5,.5)t[X(25606)]=UDim2[X(25578)](.5,0,.5,0)t[X(25567)]=X(25563)..Q[4][Q[3]]t[X(25544)]=t[X(25586)][X(25536)]*.08 t[X(25607)]=X(25517)t[X(25534)]=Enum[X(25534)][X(25583)]t[X(25584)]=Color3[X(25585)](255,255,255)t[X(25591)]=0 t[X(25542)]=Color3[X(25585)](34,34,34)t[X(25529)]:Connect(function()spawn(function()Y(t,.45)end)if Q[4][Q[3]+1]then Q[3]=Q[3]+1 t[X(25567)]=X(25563)..Q[4][Q[3]]else Q[3]=1 t[X(25567)]=X(25563)..Q[4][1]end j()end)t[X(25538)]:Connect(function()spawn(function()Y(t,.45)end)if Q[4][Q[3]-1]then Q[3]=Q[3]-1 t[X(25567)]=X(25563)..Q[4][Q[3]]else local c=0 for t,Q in pairs(Q[4])do c=c+1 end Q[3]=c t[X(25567)]=X(25563)..Q[4][1]end j()end)end end d=d+1 local F=Instance[X(25578)](X(25582),L)F[X(25597)]=1 F[X(25559)]=UDim2[X(25578)](1,0,1,0)F[X(25606)]=UDim2[X(25578)](0,0,d,0)table[X(25522)](N[X(25525)],F)local m=Instance[X(25578)](X(25546),F)if t[X(25569)]then m[X(25567)]=X(25533)..t[X(25569)]else m[X(25567)]=X(25602)end m[X(25559)]=UDim2[X(25578)](1,0,1,0)m[X(25597)]=1 m[X(25544)]=m[X(25586)][X(25536)]*.06 m[X(25607)]=X(25517)m[X(25534)]=Enum[X(25534)][X(25583)]m[X(25584)]=Color3[X(25585)](255,255,255)m[X(25529)]:Connect(function()m[X(25567)]=X(25520)local o=t[X(25569)]local d local Z=c[X(25579)]:Connect(function(o)spawn(function()Q=true task[X(25524)](.5)Q=false end)task[X(25524)]()if o[X(25599)]~=Enum[X(25599)][X(25571)]then d=o[X(25599)]t[X(25569)]=c:GetStringForKeyCode(o[X(25599)])else d=nil t[X(25569)]=nil end d=true end)repeat task[X(25524)]()until d print(tostring(t[X(25569)]))Z:Disconnect()if t[X(25569)]then m[X(25567)]=X(25533)..t[X(25569)]else m[X(25567)]=X(25602)end j()end)else H=false for t,Q in pairs(o:GetChildren())do if Q:IsA(X(25582))and Q[X(25606)][X(25551)][X(25587)]>C[X(25606)][X(25551)][X(25587)]then Q[X(25606)]=Q[X(25606)]-UDim2[X(25578)](0,0,s+1,0)end end for t,Q in pairs(N[X(25525)])do Q:Destroy()end end end)end)end}H()return s
+getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
+getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
+getgenv().HUDAnimations = true
+getgenv().BlurAnimations = true
+getgenv().SaveDefault = "AstralConfig"
+getgenv().GUI.Enabled = false
+getgenv().SaveName = getgenv().SaveDefault .. ".lua"
+getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
+Modules = {}
+local Tabs = 0
+local TabInstances = {}
+local UIS = game:GetService"UserInputService"
+local HTTP = game:GetService"HttpService"
+local Blur = Instance.new("BlurEffect", game:GetService"Lighting")
+Blur.Enabled = false
+
+local function Save()
+	local save = HTTP:JSONEncode(Modules)
+	writefile(getgenv().SaveName, save)
+end
+
+local function Load()
+	if isfile(getgenv().SaveName) then
+		local save = readfile(getgenv().SaveName)
+		local decodedsave = HTTP:JSONDecode(save)
+		Modules = decodedsave
+	else
+		warn("No configuration save was found!")
+	end
+end
+
+local function AddEffect(GUIInstance, Duration)
+	local effect = Instance.new("Frame", GUIInstance)
+	effect.Size = UDim2.new(0, 0, 1, 0)
+	effect.BorderSizePixel = 0
+	effect.Transparency = 0.5
+	for i = 1, 100 do
+		task.wait(Duration / 2.5e3)
+		effect.Size = effect.Size + UDim2.new(0.01, 0, 0, 0)
+		effect.Transparency = effect.Transparency + 5e-3
+	end
+	effect:Destroy()
+end
+
+local function MakeDarker(color)
+	local H, S, V = color:ToHSV()
+	V = math.clamp(V / 2, 0.5, 0.5)
+	return Color3.fromHSV(H, S, V)
+end
+
+local debounce = false
+UIS.InputBegan:Connect(function()
+	if UIS:IsKeyDown(Enum.KeyCode.RightShift) and debounce == false then
+		if getgenv().BlurAnimations then
+			spawn(function()
+				task.wait(0.15)
+				if getgenv().GUI.Enabled == true then
+					Blur.Size = 1
+					Blur.Enabled = not Blur.Enabled
+					for i = 1, 50 do
+						task.wait()
+						Blur.Size = Blur.Size + 0.3
+					end
+				else
+					for i = 1, 50 do
+						task.wait()
+						Blur.Size = Blur.Size - 0.3
+					end
+					Blur.Enabled = not Blur.Enabled
+				end
+			end)
+		end
+		getgenv().GUI.Enabled = not getgenv().GUI.Enabled
+	end
+end)
+local UILibrary = {
+	MakeTab = function(tabname)
+		local newtab = Instance.new("Frame", getgenv().GUI)
+		local Line = Instance.new("Frame", newtab)
+		local Title = Instance.new("TextLabel", newtab)
+		newtab.Size = UDim2.new(0.13, 0, 0.0365, 0)
+		newtab.Position = UDim2.new(0.03 + 0.135 * Tabs, 0, 0.025, 0)
+		newtab.BorderSizePixel = 0
+		newtab.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+		Line.Size = UDim2.new(1, 0, 0.065, 0)
+		Line.BorderSizePixel = 0
+		Title.BackgroundTransparency = 1
+		Title.Text = tabname
+		Title.Font = Enum.Font.GothamBold
+		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Title.Size = UDim2.new(1, 0, 0.7, 0)
+		Title.TextSize = Title.AbsoluteSize.X * 0.09
+		Title.Position = UDim2.new(0, 0, 0.2, 0)
+		spawn(function()
+			while task.wait() do Line.BackgroundColor3 = getgenv().HUDColor end
+		end)
+		Tabs = Tabs + 1
+		table.insert(TabInstances, newtab)
+		return newtab
+	end,
+	MakeModule = function(Module)
+		spawn(function()
+			local BindCooldown = false
+			local Tab = Module.Tab
+			local Name = Module.Name
+			local DropdownOpen = false
+			local Description = Module.Description
+			local DropdownCount = 0
+			for i,v in pairs(Modules) do
+				if v.Name == Module.Name then
+					Module.Enabled = v.Enabled
+					Module.Bind = v.Bind
+					Module.Dropdowns = v.Dropdowns
+				end
+			end
+			local TemporaryObjects = { ["DropdownGUI"] = {}, ["HoverGUI"] = {} }
+			for i, v in pairs(Module.Dropdowns) do DropdownCount = DropdownCount + 1 end
+			local newModule = Instance.new("Frame", Tab)
+			local newbutton = Instance.new("TextButton", newModule)
+			newModule.Size = UDim2.new(1, 0, 1, 0)
+			newModule.BorderSizePixel = 0
+			newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+			newModule.Position = UDim2.new(0, 0, #Tab:GetChildren() - 2, 0)
+			newbutton.Size = UDim2.new(1, 0, 1, 0)
+			newbutton.BackgroundTransparency = 1
+			newbutton.Text = " " .. Name
+			newbutton.TextSize = newbutton.AbsoluteSize.X * 0.075
+			newbutton.Font = Enum.Font.GothamSemibold
+			newbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
+			if Module.Enabled == true then
+				spawn(function()
+					while Module.Enabled == true do
+						newModule.BackgroundColor3 = getgenv().HUDColor
+						task.wait()
+						spawn(function() Module.Function(Module, Module.Dropdowns) end)
+					end
+				end)
+			else newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42) end
+			newbutton.TextXAlignment = "Left"
+			local entered = false
+
+			local function SaveSettings()
+				for i,v in pairs(Modules) do
+					if v.Name == Module.Name then
+						v.Enabled = Module.Enabled
+						v.Bind = Module.Bind
+						v.Dropdowns = Module.Dropdowns
+					end
+				end
+				Save()
+			end
+
+			newbutton.MouseEnter:Connect(function()
+				entered = true
+				local Hover = Instance.new("Frame", getgenv().GUI)
+				Hover.Size = UDim2.new(4.35e-3 * string.len(Description), 0, 0.055, 0)
+				Hover.BorderSizePixel = 0
+				Hover.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+				local Text = Instance.new("TextLabel", Hover)
+				Text.Size = UDim2.new(1, 0, 0.35, 0)
+				Text.Position = UDim2.new(0, 0, 0.025, 0)
+				Text.Font = Enum.Font.GothamBold
+				Text.BackgroundTransparency = 1
+				Text.Text = "  " .. Name .. ":"
+				Text.TextXAlignment = "Left"
+				Text.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Text.TextSize = Text.AbsoluteSize.Y * 0.9
+				local Text2 = Instance.new("TextLabel", Hover)
+				Text2.Size = UDim2.new(1, 0, 0.5, 0)
+				Text2.Position = UDim2.new(0, 0, 0.5, 0)
+				Text2.Font = Enum.Font.GothamSemibold
+				Text2.BackgroundTransparency = 1
+				Text2.Text = "  " .. Description
+				Text2.TextXAlignment = "Left"
+				Text2.TextColor3 = Color3.fromRGB(255, 255, 255)
+				Text2.TextSize = Text.AbsoluteSize.Y * 0.8
+				table.insert(TemporaryObjects.HoverGUI, Hover)
+				local Side = Instance.new("Frame", Hover)
+				Side.Size = UDim2.new(0.4 / string.len(Description), 0, 1, 0)
+				Side.BorderSizePixel = 0
+				repeat
+					if entered then
+						Hover.Position = UDim2.new(0, UIS:GetMouseLocation().X, 0, UIS:GetMouseLocation().Y)
+						Side.BackgroundColor3 = getgenv().HUDColor
+						if Module.Enabled then Hover.BackgroundColor3 = MakeDarker(getgenv().HUDColor)
+						else Hover.BackgroundColor3 = Color3.fromRGB(30, 30, 30) end
+					end
+					task.wait()
+				until not entered
+			end)
+			newbutton.MouseLeave:Connect(function()
+				entered = false
+				for i, v in pairs(TemporaryObjects.HoverGUI) do v:Destroy() end
+			end)
+			newbutton.MouseButton1Click:Connect(function()
+				spawn(function() AddEffect(newbutton, 0.45) end)
+				if Module.Enabled == false then
+					Module.Enabled = true
+					spawn(function()
+						spawn(function()
+							while Module.Enabled == true do
+								newModule.BackgroundColor3 = getgenv().HUDColor
+								task.wait()
+							end
+						end)
+						Module.Function(Module, Module.Dropdowns)
+					end)
+				else
+					Module.Enabled = false
+					task.wait(0.1)
+					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+					Module.Enabled = false
+				end
+			end)
+			UIS.InputBegan:Connect(function(input)
+				if Module.Bind and input.KeyCode == Enum.KeyCode[string.upper(Module.Bind)] and BindCooldown == false then
+					spawn(function() AddEffect(newbutton, 0.45) end)
+					if Module.Enabled == false then
+						Module.Enabled = true
+						spawn(function()
+							spawn(function()
+								while Module.Enabled == true do
+									newModule.BackgroundColor3 = getgenv().HUDColor
+									task.wait()
+								end
+							end)
+							Module.Function(Module, Module.Dropdowns)
+						end)
+					else
+						Module.Enabled = false
+						task.wait(0.1)
+						newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+						Module.Enabled = false
+					end
+					SaveSettings()
+				end
+			end)
+			newbutton.MouseButton2Click:Connect(function()
+				spawn(function() AddEffect(newbutton, 0.45) end)
+				if DropdownOpen == false then
+					local AddedObjects = 0
+					DropdownOpen = true
+					local DropFrame = Instance.new("Frame", newbutton)
+					table.insert(TemporaryObjects.DropdownGUI, DropFrame)
+					DropFrame.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+					DropFrame.Size = UDim2.new(1, 0, DropdownCount + 1, 0)
+					DropFrame.BorderSizePixel = 0
+					DropFrame.Position = UDim2.new(0, 0, 1, 0)
+					for i, v in pairs(Tab:GetChildren()) do
+						if v:IsA"Frame" and v.Position.Y.Scale > newModule.Position.Y.Scale then
+							v.Position = v.Position + UDim2.new(0, 0, DropdownCount + 1, 0)
+						end
+					end
+					for i, v in pairs(Module.Dropdowns) do
+						AddedObjects = AddedObjects + 1
+						local Frame = Instance.new("Frame", newbutton)
+						Frame.BackgroundTransparency = 1
+						Frame.Size = UDim2.new(1, 0, 1, 0)
+						Frame.Position = UDim2.new(0, 0, AddedObjects, 0)
+						table.insert(TemporaryObjects.DropdownGUI, Frame)
+						local Type = v[1]
+						local Name = v[2]
+						if v[1] == "Slider" then
+							local MinValue = v[3]
+							local MaxValue = v[4]
+							local CurrentValue = v[5]
+							local Title = Instance.new("TextLabel", Frame)
+							local BarBack = Instance.new("TextButton", Frame)
+							local Bar = Instance.new("TextButton", BarBack)
+							Title.Size = UDim2.new(0.9, 0, 0.375, 0)
+							Title.Position = UDim2.new(0.05, 0, 0.1, 0)
+							Title.BackgroundTransparency = 1
+							Title.TextXAlignment = "Left"
+							Title.TextSize = Title.AbsoluteSize.X * 0.06
+							Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Title.Font = Enum.Font.GothamSemibold
+							Title.Text = v[2] .. ": " .. math.round(CurrentValue)
+							BarBack.Size = UDim2.new(0.9, 0, 0.25, 0)
+							BarBack.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+							BarBack.Position = UDim2.new(0.05, 0, 0.7, 0)
+							BarBack.BorderSizePixel = 0
+							Bar.Size = UDim2.new(CurrentValue / MaxValue, 0, 1, 0)
+							Bar.BorderSizePixel = 0
+							Bar.Text = ""
+							BarBack.Text = ""
+							spawn(function()
+								while task.wait() do Bar.BackgroundColor3 = getgenv().HUDColor end
+							end)
+							-- Slider Code
+							local dragging = false
+							BarBack.MouseButton1Down:Connect(function()
+								dragging = true
+								repeat
+									task.wait()
+									local mouseL = UIS:GetMouseLocation()
+									local Relative = mouseL - Bar.AbsolutePosition
+									local percent = math.clamp(Relative.X / BarBack.AbsoluteSize.X, 0, 1)
+									Bar.Size = UDim2.new(percent, 0, 1, 0)
+									v[5] = Bar.Size.X.Scale * v[4]
+									Title.Text = v[2] .. ": " .. math.round(v[5])
+								until dragging == false
+								SaveSettings()
+							end)
+							Bar.MouseButton1Down:Connect(function()
+								dragging = true
+								repeat
+									task.wait()
+									local mouseL = UIS:GetMouseLocation()
+									local Relative = mouseL - Bar.AbsolutePosition
+									local percent = math.clamp(Relative.X / BarBack.AbsoluteSize.X, 0, 1)
+									Bar.Size = UDim2.new(percent, 0, 1, 0)
+									v[5] = Bar.Size.X.Scale * v[4]
+									Title.Text = v[2] .. ": " .. math.round(v[5])
+								until dragging == false
+								SaveSettings()
+							end)
+							UIS.InputEnded:Connect(function(input)
+								if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
+							end)
+							Bar.Size = UDim2.new(v[5] / v[4], 0, 1, 0)
+						elseif v[1] == "Toggle" then
+							local CurrentValue = v[3]
+							local Title = Instance.new("TextButton", Frame)
+							Title.Size = UDim2.new(0.95, 0, 1, 0)
+							Title.Position = UDim2.new(0.015, 0, 0, 0)
+							Title.TextSize = Title.AbsoluteSize.X * 0.06
+							Title.TextXAlignment = "Left"
+							Title.BackgroundTransparency = 1
+							Title.Text = "  " .. Name
+							Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Title.Font = Enum.Font.GothamSemibold
+							local ToggleBox = Instance.new("Frame", Title)
+							ToggleBox.Size = UDim2.new(0.15, 0, 0.435, 0)
+							ToggleBox.AnchorPoint = Vector2.new(0.5, 0.5)
+							ToggleBox.BorderSizePixel = 0
+							ToggleBox.Position = UDim2.new(0.9, 0, 0.5, 0)
+							ToggleBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+							local ToggleBar = Instance.new("Frame", ToggleBox)
+							ToggleBar.Size = UDim2.new(0.35, 0, 1, 0)
+							ToggleBar.BorderSizePixel = 0
+							if v[3] then
+								spawn(function()
+									repeat
+										task.wait()
+										ToggleBox.BackgroundColor3 = MakeDarker(getgenv().HUDColor)
+									until v[3] == false
+								end)
+							end
+							spawn(function()
+								while task.wait() do ToggleBar.BackgroundColor3 = getgenv().HUDColor end
+							end)
+							if v[3] == true then ToggleBar.Position = UDim2.new(0.65, 0, 0, 0) end
+							Title.MouseButton1Click:Connect(function()
+								if v[3] == false then
+									v[3] = true
+									for i = 1, 50 do
+										if math.random(1, 3) == 1 then task.wait() end
+										ToggleBar.Position = ToggleBar.Position + UDim2.new(0.019, 0, 0, 0)
+									end
+									ToggleBar.Position = UDim2.new(0.65, 0, 0, 0)
+									spawn(function()
+										repeat
+											task.wait()
+											ToggleBox.BackgroundColor3 = MakeDarker(getgenv().HUDColor)
+										until v[3] == false
+									end)
+								else
+									v[3] = false
+									for i = 1, 50 do
+										if math.random(1, 3) == 1 then task.wait() end
+										ToggleBar.Position = ToggleBar.Position - UDim2.new(0.019, 0, 0, 0)
+									end
+									ToggleBar.Position = UDim2.new(0, 0, 0, 0)
+									ToggleBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+								end
+								SaveSettings()
+							end)
+						elseif v[1] == "Selection" then
+							local Click = Instance.new("TextButton", Frame)
+							Click.Size = UDim2.new(0.9, 0, 0.65, 0)
+							Click.BackgroundTransparency = 0
+							Click.AnchorPoint = Vector2.new(0.5, 0.5)
+							Click.Position = UDim2.new(0.5, 0, 0.5, 0)
+							Click.Text = " Selected mode: " .. v[4][v[3]]
+							Click.TextSize = Click.AbsoluteSize.X * 0.08
+							Click.TextXAlignment = "Left"
+							Click.Font = Enum.Font.GothamBold
+							Click.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Click.BorderSizePixel = 0
+							Click.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+							Click.MouseButton1Click:Connect(function()
+								spawn(function() AddEffect(Click, 0.45) end)
+								if v[4][v[3] + 1] then
+									v[3] = v[3] + 1
+									Click.Text = " Selected mode: " .. v[4][v[3]]
+								else
+									v[3] = 1
+									Click.Text = " Selected mode: " .. v[4][1]
+								end
+								SaveSettings()
+							end)
+							Click.MouseButton2Click:Connect(function()
+								spawn(function() AddEffect(Click, 0.45) end)
+								if v[4][v[3] - 1] then
+									v[3] = v[3] - 1
+									Click.Text = " Selected mode: " .. v[4][v[3]]
+								else
+									local total = 0
+									for i, v in pairs(v[4]) do total = total + 1 end
+									v[3] = total
+									Click.Text = " Selected mode: " .. v[4][1]
+								end
+								SaveSettings()
+							end)
+						end
+					end
+					AddedObjects = AddedObjects + 1
+					local Frame = Instance.new("Frame", newbutton)
+					Frame.BackgroundTransparency = 1
+					Frame.Size = UDim2.new(1, 0, 1, 0)
+					Frame.Position = UDim2.new(0, 0, AddedObjects, 0)
+					table.insert(TemporaryObjects.DropdownGUI, Frame)
+					local BindText = Instance.new("TextButton", Frame)
+					if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
+					else BindText.Text = "   Bind: none" end
+					BindText.Size = UDim2.new(1, 0, 1, 0)
+					BindText.BackgroundTransparency = 1
+					BindText.TextSize = BindText.AbsoluteSize.X * 0.06
+					BindText.TextXAlignment = "Left"
+					BindText.Font = Enum.Font.GothamBold
+					BindText.TextColor3 = Color3.fromRGB(255, 255, 255)
+					BindText.MouseButton1Click:Connect(function()
+						BindText.Text = "   Press a key/escape to remove"
+						local OriginalBind = Module.Bind
+						local set
+						local BindEvent = UIS.InputBegan:Connect(function(input)
+							spawn(function()
+								BindCooldown = true
+								task.wait(0.5)
+								BindCooldown = false
+							end)
+							task.wait()
+							if input.KeyCode ~= Enum.KeyCode.Escape then
+								set = input.KeyCode
+								Module.Bind = UIS:GetStringForKeyCode(input.KeyCode)
+							else
+								set = nil
+								Module.Bind = nil
+							end
+							set = true
+						end)
+						repeat task.wait() until set
+						print(tostring(Module.Bind))
+						BindEvent:Disconnect()
+						if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
+						else BindText.Text = "   Bind: none" end
+						SaveSettings()
+					end)
+				else
+					DropdownOpen = false
+					for i, v in pairs(Tab:GetChildren()) do
+						if v:IsA"Frame" and v.Position.Y.Scale > newModule.Position.Y.Scale then
+							v.Position = v.Position - UDim2.new(0, 0, DropdownCount + 1, 0)
+						end
+					end
+					for i, v in pairs(TemporaryObjects.DropdownGUI) do v:Destroy() end
+				end
+			end)
+		end)
+	end
+}
+Load()
+return UILibrary
