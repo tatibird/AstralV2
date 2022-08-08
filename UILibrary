@@ -131,10 +131,12 @@ local UILibrary = {
 			newbutton.TextColor3 = Color3.fromRGB(255, 255, 255)
 			if Module.Enabled == true then
 				spawn(function()
+					Module.Function(Module, Module.Dropdowns)
+				end)
+				spawn(function()
 					while Module.Enabled == true do
 						newModule.BackgroundColor3 = getgenv().HUDColor
 						task.wait()
-						spawn(function() Module.Function(Module, Module.Dropdowns) end)
 					end
 				end)
 			else newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42) end
