@@ -228,6 +228,7 @@ local UILibrary = {
 					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 					Module.Enabled = false
 				end
+				SaveSettings()
 			end)
 			UIS.InputBegan:Connect(function(input)
 				if Module.Bind and input.KeyCode == Enum.KeyCode[string.upper(Module.Bind)] and BindCooldown == false then
@@ -481,6 +482,7 @@ local UILibrary = {
 					end
 					for i, v in pairs(TemporaryObjects.DropdownGUI) do v:Destroy() end
 				end
+				SaveSettings()
 			end)
 		end)
 	end
