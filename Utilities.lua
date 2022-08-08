@@ -70,6 +70,9 @@ Utility = {
 
         return chests
     end,
+    GetCharacter = function()
+        return game.Players.LocalPlayer.Character
+    end,
 }
 
 return Utility
