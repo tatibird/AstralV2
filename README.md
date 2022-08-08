@@ -1,4 +1,7 @@
-Astral v2
+Astral - 2.0
+
+Loadstring:
+Soon!
 
 Changelog:
-None
+None yet.
