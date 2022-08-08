@@ -152,7 +152,7 @@ local UILibrary = {
 						Module.Bind = v.Bind
 						Module.Dropdowns = v.Dropdowns
 						if counted > 1 then
-							table.remove(i)
+							table.remove(Modules,i)
 						end
 					end
 				end
