@@ -140,21 +140,21 @@ local UILibrary = {
 			local entered = false
 
 			local function SaveSettings()
-				local remove = 0
-				local count = true
+				local found = true
 				for i,v in pairs(Modules) do
-					if count == true then
-						remove = remove + 1
-					end
 					if v.Name == Module.Name then
-						count = false
+						found = true
+						Module.Enabled = v.Enabled
+						Module.Bind = v.Bind
+						Module.Dropdowns = v.Dropdowns
 					end
 				end
-				table.remove(Modules,remove)
-				table.insert(Modules,Module)
+				if not found then
+					table.insert(Modules,Module)
+				end
 				Save()
 			end
-
+			SaveSettings()
 			newbutton.MouseEnter:Connect(function()
 				entered = true
 				local Hover = Instance.new("Frame", getgenv().GUI)
