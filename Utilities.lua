@@ -60,6 +60,16 @@ Utility = {
     ResetRotation = function()
         game.Players.LocalPlayer.Character.Head.Neck.C0 = origneck 
     end,
+    GetChests = function()
+        chests = {}
+        for i,v in pairs(workspace:GetChildren()) do
+            if v.Name == "chest" then
+                table.insert(chests,v)
+            end
+        end
+
+        return chests
+    end,
 }
 
 return Utility
