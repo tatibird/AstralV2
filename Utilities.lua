@@ -1,4 +1,4 @@
-local Bedwars = loadstring(game:HttpGet("https://github.com/Mastadawn/AstralV2/blob/main/Bedwars.lua", true))()
+local Bedwars = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Bedwars.lua", true))()
 
 Utility = {
     Predict = function(player)
@@ -27,6 +27,23 @@ Utility = {
         else
             return false
         end
+    end,
+    GetBestSword = function()
+        local bestsword = nil
+        local bestrank = 0
+        for i, v in pairs(game.Players.LocalPlayer.Character.InventoryFolder.Value:GetChildren()) do
+            if v.Name:match("sword") or v.Name:match("blade") then
+                for _, data in pairs(Bedwars.SwordInfo) do
+                    if data["Name"] == v.Name then
+                        if bestrank <= data["Rank"] then
+                            bestrank = data["Rank"]
+                            bestsword = v
+                        end
+                    end
+                end
+            end
+        end
+        return bestsword
     end,
 }
 
