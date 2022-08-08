@@ -6,7 +6,9 @@ getgenv().SaveDefault = "AstralConfig"
 getgenv().GUI.Enabled = false
 getgenv().SaveName = getgenv().SaveDefault .. ".lua"
 getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
+
 Modules = {}
+
 local Tabs = 0
 local TabInstances = {}
 local UIS = game:GetService"UserInputService"
@@ -140,7 +142,7 @@ local UILibrary = {
 			local entered = false
 
 			local function SaveSettings()
-				local found = true
+				local found = false
 				for i,v in pairs(Modules) do
 					if v.Name == Module.Name then
 						found = true
@@ -154,7 +156,9 @@ local UILibrary = {
 				end
 				Save()
 			end
+
 			SaveSettings()
+
 			newbutton.MouseEnter:Connect(function()
 				entered = true
 				local Hover = Instance.new("Frame", getgenv().GUI)
@@ -455,7 +459,6 @@ local UILibrary = {
 							set = true
 						end)
 						repeat task.wait() until set
-						print(tostring(Module.Bind))
 						BindEvent:Disconnect()
 						if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
 						else BindText.Text = "   Bind: none" end
@@ -474,5 +477,7 @@ local UILibrary = {
 		end)
 	end
 }
+
 Load()
+
 return UILibrary
