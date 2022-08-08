@@ -141,8 +141,8 @@ local UILibrary = {
 			newbutton.TextXAlignment = "Left"
 			local entered = false
 
+			local found = false
 			local function SaveSettings()
-				local found = false
 				for i,v in pairs(Modules) do
 					if v.Name == Module.Name then
 						found = true
@@ -151,10 +151,11 @@ local UILibrary = {
 						Module.Dropdowns = v.Dropdowns
 					end
 				end
-				if not found then
-					table.insert(Modules,Module)
-				end
 				Save()
+			end
+
+			if found == false then
+				table.insert(Modules,Module)
 			end
 
 			SaveSettings()
