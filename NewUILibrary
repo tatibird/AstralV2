@@ -120,11 +120,25 @@ local UILibrary = {
 	end,
 	MakeModule = function(Module)
 
-		for i,v in pairs(Loaded) do
-			if v.Name == Module.Name then
-				Module.Enabled = v.Enabled
-				Module.Bind = v.Bind
-				Module.Dropdowns = v.Dropdowns
+		for i,z in pairs(Loaded) do
+			if z.Name == Module.Name then
+				Module.Enabled = z.Enabled
+				Module.Bind = z.Bind
+				for i,v in pairs(z.Dropdowns) do
+					for e,c in pairs(Module.Dropdowns) do
+						if v[2] == c[2] then
+							if c[1] == "Slider" then
+								c[5] = v[5]
+							elseif c[1] == "Toggle" then
+								c[3] = v[3]
+							elseif c[1] == "Selection" then
+								c[3] = v[3]
+							else
+								print(v[1],"-->",c[1])
+							end
+						end
+					end
+				end
 			end
 		end
 
