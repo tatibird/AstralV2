@@ -1,4 +1,4 @@
-print("1")
+print("2")
 
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
