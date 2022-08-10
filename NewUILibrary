@@ -1,5 +1,3 @@
-print("2")
-
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
@@ -126,17 +124,7 @@ local UILibrary = {
 			if v.Name == Module.Name then
 				Module.Enabled = v.Enabled
 				Module.Bind = v.Bind
-				for i,Drop in pairs(Module.Dropdowns) do
-					if Drop[2] == v[2] then
-						if Drop[1] == "Slider" and v[1] == "Slider" then
-							Drop[5] = v[5]
-						elseif Drop[1] == "Toggle" and v[1] == "Toggle" then
-							Drop[3] = v[3]
-						elseif Drop[1] == "Selection" and v[1] == "Selection" then
-							Drop[3] = v[3]
-						end
-					end
-				end
+				Module.Dropdowns = v.Dropdowns
 			end
 		end
 
