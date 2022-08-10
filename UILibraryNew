@@ -7,6 +7,8 @@ getgenv().GUI.Enabled = false
 getgenv().SaveName = getgenv().SaveDefault .. ".lua"
 getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
 
+local Loaded = {}
+
 local Tabs = 0
 local TabInstances = {}
 local UIS = game:GetService"UserInputService"
@@ -58,6 +60,34 @@ UIS.InputBegan:Connect(function()
 		getgenv().GUI.Enabled = not getgenv().GUI.Enabled
 	end
 end)
+
+Save = function(Module)
+	local Saved
+	if isfile(getgenv().SaveName) then
+		Saved = HTTP:JSONDecode(readfile(getgenv().SaveName))
+	end
+	if Saved then
+		for i,v in pairs(Saved) do
+			if v.Name == Module.Name then
+				table.remove(Saved,i)
+			end
+		end
+		table.insert(Saved,Module)
+	else
+		Saved = {}
+		table.insert(Saved,Module)
+	end
+	writefile(getgenv().SaveName,Saved)
+end
+
+Load = function()
+	if isfile(getgenv().SaveName) then
+		Loaded = HTTP:JSONDecode(readfile(getgenv().SaveName))
+	else
+		warn("No config save detected")
+	end
+end
+
 local UILibrary = {
 	MakeTab = function(tabname)
 		local newtab = Instance.new("Frame", getgenv().GUI)
@@ -89,6 +119,25 @@ local UILibrary = {
 		return newtab
 	end,
 	MakeModule = function(Module)
+
+		for i,v in pairs(Loaded) do
+			if v.Name == Module.Name then
+				Module.Enabled = v.Enabled
+				Module.Bind = v.Bind
+				for i,Drop in pairs(Module.Dropdowns) do
+					if Drop[2] == v[2] then
+						if Drop[1] == "Slider" and v[1] == "Slider" then
+							Drop[5] = v[5]
+						elseif Drop[1] == "Toggle" and v[1] == "Toggle" then
+							Drop[3] = v[3]
+						elseif Drop[1] == "Selection" and v[1] == "Selection" then
+							Drop[3] = v[3]
+						end
+					end
+				end
+			end
+		end
+
 		spawn(function()
 			local BindCooldown = false
 			local Tab = Module.Tab
@@ -189,6 +238,7 @@ local UILibrary = {
 					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 					Module.Enabled = false
 				end
+				Save(Module)
 			end)
 			UIS.InputBegan:Connect(function(input)
 				if Module.Bind and input.KeyCode == Enum.KeyCode[string.upper(Module.Bind)] and BindCooldown == false then
@@ -284,6 +334,7 @@ local UILibrary = {
 									v[5] = Bar.Size.X.Scale * v[4]
 									Title.Text = v[2] .. ": " .. math.round(v[5])
 								until dragging == false
+								Save(Module)
 							end)
 							Bar.MouseButton1Down:Connect(function()
 								dragging = true
@@ -296,6 +347,7 @@ local UILibrary = {
 									v[5] = Bar.Size.X.Scale * v[4]
 									Title.Text = v[2] .. ": " .. math.round(v[5])
 								until dragging == false
+								Save(Module)
 							end)
 							UIS.InputEnded:Connect(function(input)
 								if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
@@ -334,6 +386,7 @@ local UILibrary = {
 									task.wait(.1)
 									Frame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 								end
+								Save(Module)
 							end)
 						elseif v[1] == "Selection" then
 							local Click = Instance.new("TextButton", Frame)
@@ -357,6 +410,7 @@ local UILibrary = {
 									v[3] = 1
 									Click.Text = " Selected mode: " .. v[4][1]
 								end
+								Save(Module)
 							end)
 							Click.MouseButton2Click:Connect(function()
 								spawn(function() AddEffect(Click, 0.45) end)
@@ -369,6 +423,7 @@ local UILibrary = {
 									v[3] = total
 									Click.Text = " Selected mode: " .. v[4][1]
 								end
+								Save(Module)
 							end)
 						end
 					end
@@ -411,7 +466,7 @@ local UILibrary = {
 						BindEvent:Disconnect()
 						if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
 						else BindText.Text = "   Bind: none" end
-						SaveSettings()
+						Save(Module)
 					end)
 				else
 					DropdownOpen = false
@@ -426,5 +481,7 @@ local UILibrary = {
 		end)
 	end
 }
+
+Load()
 
 return UILibrary
