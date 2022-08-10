@@ -77,7 +77,7 @@ Save = function(Module)
 		Saved = {}
 		table.insert(Saved,Module)
 	end
-	writefile(getgenv().SaveName,Saved)
+	writefile(getgenv().SaveName,HTTP:JSONEncode(Saved))
 end
 
 Load = function()
