@@ -1,4 +1,5 @@
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
+getgenv().GUI.Name = math.random(1,100000)
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
 getgenv().BlurAnimations = true
