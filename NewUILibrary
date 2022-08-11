@@ -1,4 +1,3 @@
-warn("UI Loaded")
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
@@ -187,7 +186,7 @@ local UILibrary = {
 				Round.CornerRadius = UDim.new(0,8)
 				local Text = Instance.new("TextLabel", Hover)
 				Text.Size = UDim2.new(.9, 0, 0.35, 0)
-				Text.Position = UDim2.new(.135, 0, 0.025, 0)
+				Text.Position = UDim2.new(.035, 0, 0.025, 0)
 				Text.Font = Enum.Font.GothamBold
 				Text.BackgroundTransparency = 1
 				Text.Text = string.lower(Name .. ":")
@@ -196,7 +195,7 @@ local UILibrary = {
 				Text.TextSize = Text.AbsoluteSize.Y * 0.87
 				local Text2 = Instance.new("TextLabel", Hover)
 				Text2.Size = UDim2.new(.9, 0, 0.5, 0)
-				Text2.Position = UDim2.new(.135, 0, 0.5, 0)
+				Text2.Position = UDim2.new(.035, 0, 0.5, 0)
 				Text2.Font = Enum.Font.GothamBold
 				Text2.BackgroundTransparency = 1
 				Text2.Text = string.lower(Description)
@@ -218,7 +217,8 @@ local UILibrary = {
 						else Hover.BackgroundColor3 = Color3.fromRGB(30, 30, 30) end
 					end
 					task.wait()
-				until not entered
+				until not entered or Blur.Enabled == true
+				for i, v in pairs(TemporaryObjects.HoverGUI) do v:Destroy() end
 			end)
 			newbutton.MouseLeave:Connect(function()
 				entered = false
@@ -260,7 +260,7 @@ local UILibrary = {
 							Module.Function(Module, Module.Dropdowns)
 						end)
 					else
-						task.wait(0.1)
+						task.wait()
 						newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 						Module.Enabled = false
 					end
