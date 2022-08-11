@@ -17,16 +17,18 @@ local Blur = Instance.new("BlurEffect", game:GetService"Lighting")
 Blur.Enabled = false
 
 local function AddEffect(GUIInstance, Duration)
-	local effect = Instance.new("Frame", GUIInstance)
-	effect.Size = UDim2.new(0, 0, 1, 0)
-	effect.BorderSizePixel = 0
-	effect.Transparency = 0.5
-	for i = 1, 100 do
-		task.wait(Duration / 2.5e3)
-		effect.Size = effect.Size + UDim2.new(0.01, 0, 0, 0)
-		effect.Transparency = effect.Transparency + 5e-3
-	end
-	effect:Destroy()
+	spawn(function()
+		local effect = Instance.new("Frame", GUIInstance)
+		effect.Size = UDim2.new(0, 0, 1, 0)
+		effect.BorderSizePixel = 0
+		effect.Transparency = 0.5
+		for i = 1, 100 do
+			task.wait(Duration / 2.5e3)
+			effect.Size = effect.Size + UDim2.new(0.01, 0, 0, 0)
+			effect.Transparency = effect.Transparency + 5e-3
+		end
+		effect:Destroy()
+	end)
 end
 
 local function MakeDarker(color)
