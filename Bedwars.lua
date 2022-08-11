@@ -11,7 +11,6 @@ function getremote(t)
     end
     return ""
 end
-
 local KnitClient = debug.getupvalue(require(lp.PlayerScripts.TS.knit).setup, 6)
 local Client = require(game:GetService"ReplicatedStorage".TS.remotes).default.Client
 
@@ -29,8 +28,8 @@ Bedwars = {
     ChestGive = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGiveItem"],
     GroundHit = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit,
     AbilityRemote = game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility,
-    AttackRemote = getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])),
     PurchaseItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem,
+    AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))["instance"],
 }
 
 return Bedwars
