@@ -1,3 +1,12 @@
+warn([[
+Astral UI Library
+
+Recent fixes:
+fixed keybind lag
+fixed loading
+
+]])
+
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
