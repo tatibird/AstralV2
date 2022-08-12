@@ -83,7 +83,7 @@ Load = function()
 end
 
 local Debounce = false
-local Loaded
+
 Keybinds = function()
 	UIS.InputBegan:Connect(function(input)
 		for i,v in pairs(Binds) do
