@@ -44,17 +44,9 @@ UIS.InputBegan:Connect(function()
 			spawn(function()
 				task.wait(0.15)
 				if getgenv().GUI.Enabled == true then
-					Blur.Size = 1
+					Blur.Size = 25
 					Blur.Enabled = not Blur.Enabled
-					for i = 1, 50 do
-						task.wait()
-						Blur.Size = Blur.Size + 0.3
-					end
 				else
-					for i = 1, 50 do
-						task.wait()
-						Blur.Size = Blur.Size - 0.3
-					end
 					Blur.Enabled = not Blur.Enabled
 				end
 			end)
