@@ -138,7 +138,9 @@ local UILibrary = {
 	end,
 	MakeModule = function(Module)
 
-		if Loaded then
+		spawn(function()
+			
+		end)
 			for i,z in pairs(Loaded) do
 				if z.Name == Module.Name then
 					Module.Enabled = z.Enabled
@@ -160,7 +162,7 @@ local UILibrary = {
 					end
 				end
 			end
-		end
+		end)
 
 		spawn(function()
 			local BindCooldown = false
@@ -510,5 +512,4 @@ local UILibrary = {
 }
 
 Load()
-
 return UILibrary
