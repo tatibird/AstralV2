@@ -139,8 +139,6 @@ local UILibrary = {
 	MakeModule = function(Module)
 
 		spawn(function()
-			
-		end)
 			for i,z in pairs(Loaded) do
 				if z.Name == Module.Name then
 					Module.Enabled = z.Enabled
