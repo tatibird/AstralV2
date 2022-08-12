@@ -219,7 +219,7 @@ local UILibrary = {
 						else Hover.BackgroundColor3 = Color3.fromRGB(30, 30, 30) end
 					end
 					task.wait()
-				until not entered or Blur.Enabled == true
+				until not entered
 				for i, v in pairs(TemporaryObjects.HoverGUI) do v:Destroy() end
 			end)
 			newbutton.MouseLeave:Connect(function()
