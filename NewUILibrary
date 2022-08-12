@@ -8,7 +8,7 @@ getgenv().SaveName = getgenv().SaveDefault .. ".lua"
 getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
 
 local Loaded = {}
-
+local Binds = {}
 local Tabs = 0
 local TabInstances = {}
 local UIS = game:GetService"UserInputService"
@@ -82,6 +82,30 @@ Load = function()
 	end
 end
 
+local Debounce = false
+local Loaded
+Keybinds = function()
+	UIS.InputBegan:Connect(function(input)
+		for i,v in pairs(Binds) do
+			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
+				v.Module.Enabled = not v.Module.Enabled
+				spawn(function()
+					repeat
+						task.wait()
+						v.Button.BackgroundColor3 = getgenv().HUDColor
+					until v.Module.Enabled == false or not v
+					v.Button.BackgroundColor3 = Color3.fromRGB(42,42,42)
+				end)
+				spawn(function()
+					v.Module.Function(v.Module,v.Module.Dropdowns)
+				end)
+			end
+		end
+	end)
+end
+
+Keybinds()
+
 local UILibrary = {
 	MakeTab = function(tabname)
 		local newtab = Instance.new("Frame", getgenv().GUI)
@@ -114,21 +138,23 @@ local UILibrary = {
 	end,
 	MakeModule = function(Module)
 
-		for i,z in pairs(Loaded) do
-			if z.Name == Module.Name then
-				Module.Enabled = z.Enabled
-				Module.Bind = z.Bind
-				for i,v in pairs(z.Dropdowns) do
-					for e,c in pairs(Module.Dropdowns) do
-						if v[2] == c[2] then
-							if c[1] == "Slider" then
-								c[5] = v[5]
-							elseif c[1] == "Toggle" then
-								c[3] = v[3]
-							elseif c[1] == "Selection" then
-								c[3] = v[3]
-							else
-								print(v[1],"-->",c[1])
+		if Loaded then
+			for i,z in pairs(Loaded) do
+				if z.Name == Module.Name then
+					Module.Enabled = z.Enabled
+					Module.Bind = z.Bind
+					for i,v in pairs(z.Dropdowns) do
+						for e,c in pairs(Module.Dropdowns) do
+							if v[2] == c[2] then
+								if c[1] == "Slider" then
+									c[5] = v[5]
+								elseif c[1] == "Toggle" then
+									c[3] = v[3]
+								elseif c[1] == "Selection" then
+									c[3] = v[3]
+								else
+									print(v[1],"-->",c[1])
+								end
 							end
 						end
 					end
@@ -157,19 +183,36 @@ local UILibrary = {
 			newbutton.TextSize = newbutton.AbsoluteSize.X * 0.075
 			newbutton.Font = Enum.Font.GothamSemibold
 			newbutton.TextColor3 = Color3.fromRGB(200, 200, 200)
+			local function UpdateBind()
+				if Module.Bind ~= nil then
+					for i,v in pairs(Binds) do
+						if v.Module.Name == Module.Name then
+							table.remove(Binds,i)
+						end
+					end
+					table.insert(Binds,{
+						Module = Module,
+						Button = newbutton,
+					})
+				end
+			end
 			if Module.Enabled == true then
 				spawn(function()
 					Module.Function(Module, Module.Dropdowns)
 				end)
 				spawn(function()
-					while Module.Enabled == true do
+					repeat task.wait()
 						newModule.BackgroundColor3 = getgenv().HUDColor
 						task.wait()
-					end
+					until Module.Enabled == false
+					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 				end)
 			else newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42) end
 			newbutton.TextXAlignment = "Left"
 			local entered = false
+
+			UpdateBind()
+
 			newbutton.MouseEnter:Connect(function()
 				entered = true
 				local Hover = Instance.new("Frame", getgenv().GUI)
@@ -180,7 +223,7 @@ local UILibrary = {
 				Round.CornerRadius = UDim.new(0,8)
 				local Text = Instance.new("TextLabel", Hover)
 				Text.Size = UDim2.new(.9, 0, 0.35, 0)
-				Text.Position = UDim2.new(.065, 0, 0.025, 0)
+				Text.Position = UDim2.new(.035, 0, 0.025, 0)
 				Text.Font = Enum.Font.GothamBold
 				Text.BackgroundTransparency = 1
 				Text.Text = string.lower(Name .. ":")
@@ -189,7 +232,7 @@ local UILibrary = {
 				Text.TextSize = Text.AbsoluteSize.Y * 0.87
 				local Text2 = Instance.new("TextLabel", Hover)
 				Text2.Size = UDim2.new(.9, 0, 0.5, 0)
-				Text2.Position = UDim2.new(.065, 0, 0.5, 0)
+				Text2.Position = UDim2.new(.035, 0, 0.5, 0)
 				Text2.Font = Enum.Font.GothamBold
 				Text2.BackgroundTransparency = 1
 				Text2.Text = string.lower(Description)
@@ -200,7 +243,7 @@ local UILibrary = {
 				local Side = Instance.new("Frame", Hover)
 				Side.Size = UDim2.new(0.3 / string.len(Description), 0, .7, 0)
 				Side.BorderSizePixel = 0
-				Side.Position = UDim2.new(0.025,0,0.15,0)
+				Side.Position = UDim2.new(0.0005 * string.len(Description),0,0.15,0)
 				local Round2 = Instance.new("UICorner",Side)
 				Round2.CornerRadius = UDim.new(0,8)
 				repeat
@@ -211,7 +254,7 @@ local UILibrary = {
 						else Hover.BackgroundColor3 = Color3.fromRGB(30, 30, 30) end
 					end
 					task.wait()
-				until not entered
+				until not entered or Blur.Enabled == true
 				for i, v in pairs(TemporaryObjects.HoverGUI) do v:Destroy() end
 			end)
 			newbutton.MouseLeave:Connect(function()
@@ -224,10 +267,11 @@ local UILibrary = {
 					Module.Enabled = true
 					spawn(function()
 						spawn(function()
-							while Module.Enabled == true do
-								newModule.BackgroundColor3 = getgenv().HUDColor
+							repeat
 								task.wait()
-							end
+								newModule.BackgroundColor3 = getgenv().HUDColor
+							until Module.Enabled == false
+							newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 						end)
 						Module.Function(Module, Module.Dropdowns)
 					end)
@@ -238,24 +282,6 @@ local UILibrary = {
 					Module.Enabled = false
 				end
 				Save(Module)
-			end)
-			UIS.InputBegan:Connect(function(input)
-				if Module.Bind and input.KeyCode == Enum.KeyCode[string.upper(Module.Bind)] and BindCooldown == false then
-					if Module.Enabled == false then
-						Module.Enabled = true
-						spawn(function()
-							repeat
-								newModule.BackgroundColor3 = getgenv().HUDColor
-								task.wait()
-							until Module.Enabled == false
-						end)
-						Module.Function(Module, Module.Dropdowns)
-					else
-						task.wait()
-						newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-						Module.Enabled = false
-					end
-				end
 			end)
 			newbutton.MouseButton2Click:Connect(function()
 				spawn(function() AddEffect(newbutton, 0.45) end)
@@ -330,6 +356,7 @@ local UILibrary = {
 									Title.Text = v[2] .. ": " .. math.round(v[5])
 								until dragging == false
 								Save(Module)
+								UpdateBind()
 							end)
 							Bar.MouseButton1Down:Connect(function()
 								dragging = true
@@ -343,6 +370,7 @@ local UILibrary = {
 									Title.Text = v[2] .. ": " .. math.round(v[5])
 								until dragging == false
 								Save(Module)
+								UpdateBind()
 							end)
 							UIS.InputEnded:Connect(function(input)
 								if input.UserInputType == Enum.UserInputType.MouseButton1 then dragging = false end
@@ -382,6 +410,7 @@ local UILibrary = {
 									Frame.BackgroundColor3 = Color3.fromRGB(44, 44, 44)
 								end
 								Save(Module)
+								UpdateBind()
 							end)
 						elseif v[1] == "Selection" then
 							local Click = Instance.new("TextButton", Frame)
@@ -406,6 +435,7 @@ local UILibrary = {
 									Click.Text = " Selected mode: " .. v[4][1]
 								end
 								Save(Module)
+								UpdateBind()
 							end)
 							Click.MouseButton2Click:Connect(function()
 								spawn(function() AddEffect(Click, 0.45) end)
@@ -419,6 +449,7 @@ local UILibrary = {
 									Click.Text = " Selected mode: " .. v[4][1]
 								end
 								Save(Module)
+								UpdateBind()
 							end)
 						end
 					end
@@ -462,6 +493,7 @@ local UILibrary = {
 						if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
 						else BindText.Text = "   Bind: none" end
 						Save(Module)
+						UpdateBind()
 					end)
 				else
 					DropdownOpen = false
