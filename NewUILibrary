@@ -2,8 +2,7 @@ warn([[
 Astral UI Library
 
 Recent fixes:
-fixed keybind lag
-fixed loading
+fixed lag
 
 ]])
 
@@ -49,18 +48,10 @@ end
 local debounce = false
 UIS.InputBegan:Connect(function()
 	if UIS:IsKeyDown(Enum.KeyCode.RightShift) and debounce == false then
-		if getgenv().BlurAnimations then
-			spawn(function()
-				task.wait(0.15)
-				if getgenv().GUI.Enabled == true then
-					Blur.Size = 25
-					Blur.Enabled = not Blur.Enabled
-				else
-					Blur.Enabled = not Blur.Enabled
-				end
-			end)
-		end
+		debounce = true
 		getgenv().GUI.Enabled = not getgenv().GUI.Enabled
+		task.wait(.3)
+		debounce = false
 	end
 end)
 
