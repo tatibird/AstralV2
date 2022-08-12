@@ -17,9 +17,7 @@ local Blur = Instance.new("BlurEffect", game:GetService"Lighting")
 Blur.Enabled = false
 
 local function AddEffect(GUIInstance, Duration)
-
---[[
-spawn(function()
+	spawn(function()
 		local effect = Instance.new("Frame", GUIInstance)
 		effect.Size = UDim2.new(0, 0, 1, 0)
 		effect.BorderSizePixel = 0
@@ -31,7 +29,6 @@ spawn(function()
 		end
 		effect:Destroy()
 	end)
-]]
 end
 
 local function MakeDarker(color)
@@ -252,18 +249,15 @@ local UILibrary = {
 			end)
 			UIS.InputBegan:Connect(function(input)
 				if Module.Bind and input.KeyCode == Enum.KeyCode[string.upper(Module.Bind)] and BindCooldown == false then
-					spawn(function() AddEffect(newbutton, 0.45) end)
 					if Module.Enabled == false then
 						Module.Enabled = true
 						spawn(function()
-							spawn(function()
-								repeat
-									newModule.BackgroundColor3 = getgenv().HUDColor
-									task.wait()
-								until Module.Enabled == false
-							end)
-							Module.Function(Module, Module.Dropdowns)
+							repeat
+								newModule.BackgroundColor3 = getgenv().HUDColor
+								task.wait()
+							until Module.Enabled == false
 						end)
+						Module.Function(Module, Module.Dropdowns)
 					else
 						task.wait()
 						newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
