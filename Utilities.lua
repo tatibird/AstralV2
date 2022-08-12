@@ -11,7 +11,7 @@ Utility = {
     GetNearbyPlayers = function(range,addself)
         local nearby = {}
         for _,Player in pairs(game:GetService("Players"):GetPlayers()) do
-            if Player.Character and Player.Character.PrimaryPart then
+            if Player.Character and Player.Character.PrimaryPart and Player.Character.Humanoid.Health > 0 then
                 if (Player.Character.PrimaryPart.Position - game.Players.LocalPlayer.Character.PrimaryPart.Position).Magnitude <= range then
                     if Player.UserId == game.Players.LocalPlayer.UserId then
                         if addself == true then
