@@ -86,6 +86,7 @@ Keybinds = function()
 		for i,v in pairs(Binds) do
 			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
 				v.Module.Enabled = not v.Module.Enabled
+				task.wait(.1)
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)
