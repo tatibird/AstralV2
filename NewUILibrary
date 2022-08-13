@@ -48,17 +48,6 @@ end
 local debounce = false
 UIS.InputBegan:Connect(function()
 	if UIS:IsKeyDown(Enum.KeyCode.RightShift) and debounce == false then
-		if getgenv().BlurAnimations then
-			spawn(function()
-				task.wait(0.15)
-				if getgenv().GUI.Enabled == true then
-					Blur.Size = 25
-					Blur.Enabled = not Blur.Enabled
-				else
-					Blur.Enabled = not Blur.Enabled
-				end
-			end)
-		end
 		getgenv().GUI.Enabled = not getgenv().GUI.Enabled
 	end
 end)
@@ -471,7 +460,7 @@ local UILibrary = {
 					else BindText.Text = "   Bind: none" end
 					BindText.Size = UDim2.new(1, 0, 1, 0)
 					BindText.BackgroundTransparency = 1
-					BindText.TextSize = BindText.AbsoluteSize.X * 0.06
+					BindText.TextSize = BindText.AbsoluteSize.X * 0.07
 					BindText.TextXAlignment = "Left"
 					BindText.Font = Enum.Font.GothamBold
 					BindText.TextColor3 = Color3.fromRGB(200, 200, 200)
