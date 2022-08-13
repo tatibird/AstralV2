@@ -118,9 +118,10 @@ local UILibrary = {
 		Title.Position = UDim2.new(0, 0, 0.2, 0)
 		Title.TextXAlignment = "Left"
 		spawn(function()
-			while task.wait() do
+			repeat
+				task.wait()
 				Line.BackgroundColor3 = getgenv().HUDColor
-			end
+			until true == false
 		end)
 		Tabs = Tabs + 1
 		table.insert(TabInstances, newtab)
@@ -330,7 +331,10 @@ local UILibrary = {
 							Bar.Text = ""
 							BarBack.Text = ""
 							spawn(function()
-								while task.wait() do Bar.BackgroundColor3 = getgenv().HUDColor end
+								repeat
+									task.wait()
+									Bar.BackgroundColor3 = getgenv().HUDColor
+								until not Bar
 							end)
 							-- Slider Code
 							local dragging = false
