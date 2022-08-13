@@ -35,7 +35,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = workspace.Curr
 end)
 
 getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = uis.InputBegan:connect(function(key)
-    if key.KeyCode == Enum.KeyCode.T and not uis:GetFocusedTextBox() then
+    if key.KeyCode == Enum.KeyCode.Slash and not uis:GetFocusedTextBox() then
         if not pressed then
             pressed = true
             ChatFrame.Position = UDim2.new(0,0,0,0)
@@ -61,11 +61,6 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = uis.InputBegan
             ChatFrame.Position = Position
         end
     end
-end)
-
-getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.Focused:connect(function()
-    if not pressed then Box:ReleaseFocus() end
-    Box.Text = ""
 end)
 
 for i,v in next, getconnections(Box.FocusLost) do
