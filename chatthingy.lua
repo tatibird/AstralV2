@@ -91,6 +91,45 @@ local bypasses = {
     ["fucking"] = "ff\240\144\140\145\240\144\140\145\240\144\140\145u\240\144\140\145\240\144\140\145\240\144\140\145ϲ\240\144\140\145\240\144\140\145\240\144\140\145k\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145\240\144\140\145ing",
 }
 
+local Utilities
+
+if workspace:FindFirstChild("Map") then
+	Utilities = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Utilities.lua", true))()
+end
+
+local function teleport(position)
+    local guid = game:GetService("HttpService"):GenerateGUID()
+    if game.Players.LocalPlayer.Character.InventoryFolder.Value:FindFirstChild("telepearl") then
+        local args = {
+            [1] = game.Players.LocalPlayer.Character.InventoryFolder.Value.telepearl,
+            [2] = "telepearl",
+            [3] = "telepearl",
+            [4] = position,
+            [5] = game.Players.LocalPlayer.Character.PrimaryPart.Position,
+            [6] = Vector3.new(0,-1,0),
+            [7] = guid,
+            [8] = {
+                ["drawDurationSeconds"] = 10
+            },
+            [9] = workspace:GetServerTimeNow()
+        }
+		game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.ProjectileFire:InvokeServer(unpack(args)) 
+	else
+		getgenv().notifs.Notify("Player teleport","No telepearl found", 5, Color3.fromHSV(1,1,1))
+    end
+end
+
+local function getrandomplayer()
+    players = {}
+    for i,v in pairs(game.Players:GetChildren()) do
+        if v.Name ~= game.Players.LocalPlayer.Name and Utilities.IsAlive(v.Character) and v.Team ~= game.Players.LocalPlayer.Team then
+            table.insert(players, v)
+        end
+    end
+    local Choice = math.random(1,#players)
+    return players[Choice]
+end
+
 getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:connect(function(enter)
     if enter then
         local getidentity = syn.get_thread_identity
@@ -124,6 +163,23 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
                 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("\226\154\170\240\159\148\180\240\159\148\180\226\154\170\240\159\148\180\240\159\148\180\240\159\148\180", "All")
                 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("\226\154\170\240\159\148\180\240\159\148\180\226\154\170\240\159\148\180\240\159\148\180\240\159\148\180", "All")
                 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("\226\154\170\240\159\148\180\240\159\148\180\226\154\170\226\154\170\226\154\170\226\154\170", "All")
+            end)
+            Box.Text = 'To Chat click here or press "/" key'
+            return
+        end
+	local command = Box.Text
+	if string.find(command,".tp") then
+            spawn(function()
+                if string.find(command,"random") then
+            		local player = getrandomplayer()
+            		teleport(player.Character.PrimaryPart.Position)
+        	else
+            		for i,v in pairs(game.Players:GetChildren()) do
+               	 		if string.find(command,v.Name) then
+                    			teleport(v.Character.PrimaryPart.Position)
+                		end
+            		end
+        	end
             end)
             Box.Text = 'To Chat click here or press "/" key'
             return
