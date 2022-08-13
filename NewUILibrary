@@ -83,20 +83,14 @@ local Debounce = false
 
 Keybinds = function()
 	UIS.InputBegan:Connect(function(input)
-		spawn(function()
-			for i,v in pairs(Binds) do
-				spawn(function()
-					if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
-						spawn(function()
-							v.Module.Enabled = not v.Module.Enabled
-							spawn(function()
-								v.Module.Function(v.Module,v.Module.Dropdowns)
-							end)
-						end)
-					end
+		for i,v in pairs(Binds) do
+			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
+				v.Module.Enabled = not v.Module.Enabled
+				coroutine.wrap(function()
+					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)
 			end
-		end)
+		end
 	end)
 end
 
@@ -469,11 +463,6 @@ local UILibrary = {
 						local OriginalBind = Module.Bind
 						local set
 						local BindEvent = UIS.InputBegan:Connect(function(input)
-							spawn(function()
-								BindCooldown = true
-								task.wait(0.5)
-								BindCooldown = false
-							end)
 							task.wait()
 							if input.KeyCode ~= Enum.KeyCode.Escape then
 								set = input.KeyCode
