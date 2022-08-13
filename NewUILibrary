@@ -6,6 +6,7 @@ Recent fixes:
 fixed input binds lag
 
 ]])
+
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
@@ -25,18 +26,17 @@ local Blur = Instance.new("BlurEffect", game:GetService"Lighting")
 Blur.Enabled = false
 
 local function AddEffect(GUIInstance, Duration)
-	spawn(function()
-		local effect = Instance.new("Frame", GUIInstance)
-		effect.Size = UDim2.new(0, 0, 1, 0)
-		effect.BorderSizePixel = 0
-		effect.Transparency = 0.5
-		for i = 1, 100 do
-			task.wait(Duration / 2.5e3)
-			effect.Size = effect.Size + UDim2.new(0.01, 0, 0, 0)
-			effect.Transparency = effect.Transparency + 5e-3
-		end
-		effect:Destroy()
-	end)
+    task.spawn(function()
+        local effect = Instance.new("Frame", GUIInstance)
+        effect.BorderSizePixel = 0
+        effect.Transparency = 0.5
+        for i = 1, 100 do
+            task.wait(Duration / 100)
+            effect.Size = UDim2.new(i / 100, 0, 1, 0)
+            effect.Transparency = i / 100
+        end
+        effect:Destroy()
+    end)
 end
 
 local function MakeDarker(color)
@@ -129,7 +129,7 @@ local UILibrary = {
 		Title.BackgroundTransparency = 1
 		Title.Text = "  "..tabname
 		Title.Font = Enum.Font.GothamBold
-		Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Title.TextColor3 = Color3.fromRGB(200, 200, 200)
 		Title.Size = UDim2.new(1, 0, 0.7, 0)
 		Title.TextSize = Title.AbsoluteSize.X * 0.09
 		Title.Position = UDim2.new(0, 0, 0.2, 0)
@@ -335,12 +335,12 @@ local UILibrary = {
 							Title.BackgroundTransparency = 1
 							Title.TextXAlignment = "Left"
 							Title.TextSize = Title.AbsoluteSize.X * 0.06
-							Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Title.TextColor3 = Color3.fromRGB(200, 200, 200)
 							Title.Font = Enum.Font.GothamSemibold
-							Title.Text = v[2] .. ": " .. math.round(CurrentValue)
-							BarBack.Size = UDim2.new(0.9, 0, 0.25, 0)
+							Title.Text = string.lower(v[2] .. ": " .. math.round(CurrentValue))
+							BarBack.Size = UDim2.new(0.9, 0, 0.1, 0)
 							BarBack.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-							BarBack.Position = UDim2.new(0.05, 0, 0.7, 0)
+							BarBack.Position = UDim2.new(0.05, 0, 0.75, 0)
 							BarBack.BorderSizePixel = 0
 							Bar.Size = UDim2.new(CurrentValue / MaxValue, 0, 1, 0)
 							Bar.BorderSizePixel = 0
@@ -360,7 +360,7 @@ local UILibrary = {
 									local percent = math.clamp(Relative.X / BarBack.AbsoluteSize.X, 0, 1)
 									Bar.Size = UDim2.new(percent, 0, 1, 0)
 									v[5] = Bar.Size.X.Scale * v[4]
-									Title.Text = v[2] .. ": " .. math.round(v[5])
+									Title.Text = string.lower(v[2] .. ": " .. math.round(v[5]))
 								until dragging == false
 								Save(Module)
 								UpdateBind()
@@ -391,8 +391,8 @@ local UILibrary = {
 							Title.TextSize = Title.AbsoluteSize.X * 0.06
 							Title.TextXAlignment = "Left"
 							Title.BackgroundTransparency = 1
-							Title.Text = "  " .. Name
-							Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Title.Text = string.lower("  " .. Name)
+							Title.TextColor3 = Color3.fromRGB(200, 200, 200)
 							Title.Font = Enum.Font.GothamSemibold
 							spawn(function()
 								repeat
@@ -425,21 +425,21 @@ local UILibrary = {
 							Click.BackgroundTransparency = 0
 							Click.AnchorPoint = Vector2.new(0.5, 0.5)
 							Click.Position = UDim2.new(0.5, 0, 0.5, 0)
-							Click.Text = " Selected mode: " .. v[4][v[3]]
+							Click.Text = string.lower(" Selected mode: " .. v[4][v[3]])
 							Click.TextSize = Click.AbsoluteSize.X * 0.08
 							Click.TextXAlignment = "Left"
 							Click.Font = Enum.Font.GothamBold
-							Click.TextColor3 = Color3.fromRGB(255, 255, 255)
+							Click.TextColor3 = Color3.fromRGB(200, 200, 200)
 							Click.BorderSizePixel = 0
 							Click.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
 							Click.MouseButton1Click:Connect(function()
 								spawn(function() AddEffect(Click, 0.45) end)
 								if v[4][v[3] + 1] then
 									v[3] = v[3] + 1
-									Click.Text = " Selected mode: " .. v[4][v[3]]
+									Click.Text = string.lower(" Selected mode: " .. v[4][v[3]])
 								else
 									v[3] = 1
-									Click.Text = " Selected mode: " .. v[4][1]
+									Click.Text = string.lower(" Selected mode: " .. v[4][1])
 								end
 								Save(Module)
 								UpdateBind()
@@ -448,12 +448,12 @@ local UILibrary = {
 								spawn(function() AddEffect(Click, 0.45) end)
 								if v[4][v[3] - 1] then
 									v[3] = v[3] - 1
-									Click.Text = " Selected mode: " .. v[4][v[3]]
+									Click.Text = string.lower(" Selected mode: " .. v[4][v[3]])
 								else
 									local total = 1
 									for i, v in pairs(v[4]) do total = total + 1 end
 									v[3] = total
-									Click.Text = " Selected mode: " .. v[4][1]
+									Click.Text = string.lower(" Selected mode: " .. v[4][1])
 								end
 								Save(Module)
 								UpdateBind()
@@ -474,7 +474,7 @@ local UILibrary = {
 					BindText.TextSize = BindText.AbsoluteSize.X * 0.06
 					BindText.TextXAlignment = "Left"
 					BindText.Font = Enum.Font.GothamBold
-					BindText.TextColor3 = Color3.fromRGB(255, 255, 255)
+					BindText.TextColor3 = Color3.fromRGB(200, 200, 200)
 					BindText.MouseButton1Click:Connect(function()
 						BindText.Text = "   Press a key/escape to remove"
 						local OriginalBind = Module.Bind
@@ -497,8 +497,8 @@ local UILibrary = {
 						end)
 						repeat task.wait() until set
 						BindEvent:Disconnect()
-						if Module.Bind then BindText.Text = "   Bind: " .. Module.Bind
-						else BindText.Text = "   Bind: none" end
+						if Module.Bind then BindText.Text = string.lower("   Bind: " .. Module.Bind)
+						else BindText.Text = string.lower("   Bind: none") end
 						Save(Module)
 						UpdateBind()
 					end)
