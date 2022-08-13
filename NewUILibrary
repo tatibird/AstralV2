@@ -1,11 +1,11 @@
 warn([[
+
 Astral UI Library
 
 Recent fixes:
-fixed lag
+fixed input binds lag
 
 ]])
-
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
@@ -48,10 +48,18 @@ end
 local debounce = false
 UIS.InputBegan:Connect(function()
 	if UIS:IsKeyDown(Enum.KeyCode.RightShift) and debounce == false then
-		debounce = true
+		if getgenv().BlurAnimations then
+			spawn(function()
+				task.wait(0.15)
+				if getgenv().GUI.Enabled == true then
+					Blur.Size = 25
+					Blur.Enabled = not Blur.Enabled
+				else
+					Blur.Enabled = not Blur.Enabled
+				end
+			end)
+		end
 		getgenv().GUI.Enabled = not getgenv().GUI.Enabled
-		task.wait(.3)
-		debounce = false
 	end
 end)
 
@@ -86,21 +94,20 @@ local Debounce = false
 
 Keybinds = function()
 	UIS.InputBegan:Connect(function(input)
-		for i,v in pairs(Binds) do
-			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
-				v.Module.Enabled = not v.Module.Enabled
+		spawn(function()
+			for i,v in pairs(Binds) do
 				spawn(function()
-					repeat
-						task.wait()
-						v.Button.BackgroundColor3 = getgenv().HUDColor
-					until v.Module.Enabled == false or not v
-					v.Button.BackgroundColor3 = Color3.fromRGB(42,42,42)
-				end)
-				spawn(function()
-					v.Module.Function(v.Module,v.Module.Dropdowns)
+					if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
+						spawn(function()
+							v.Module.Enabled = not v.Module.Enabled
+							spawn(function()
+								v.Module.Function(v.Module,v.Module.Dropdowns)
+							end)
+						end)
+					end
 				end)
 			end
-		end
+		end)
 	end)
 end
 
