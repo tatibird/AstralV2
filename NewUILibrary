@@ -3,7 +3,7 @@ warn([[
 Astral UI Library
 
 Recent fixes:
-thing
+bind fix
 
 ]])
 
@@ -89,7 +89,7 @@ Keybinds = function()
 				task.wait(.1)
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
-				end)
+				end)()
 			end
 		end
 	end)
