@@ -169,7 +169,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
         end
 	local command = Box.Text
 	if string.find(command,".tp") then
-            spawn(function()
+            coroutine.wrap(function()
                 if string.find(command,"random") then
             		local player = getrandomplayer()
             		teleport(player.Character.PrimaryPart.Position)
@@ -180,7 +180,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
                 		end
             		end
         	end
-            end)
+            end)()
             Box.Text = 'To Chat click here or press "/" key'
             return
         end
