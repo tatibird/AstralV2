@@ -3,7 +3,7 @@ warn([[
 Astral UI Library
 
 Recent fixes:
-scaling stuff 3
+scaling stuff 4
 
 ]])
 
@@ -102,7 +102,7 @@ local UILibrary = {
 		local newtab = Instance.new("Frame", getgenv().GUI)
 		local Line = Instance.new("Frame", newtab)
 		local Title = Instance.new("TextLabel", newtab)
-		newtab.Size = UDim2.new(0, 230, 0, 55)
+		newtab.Size = UDim2.new(0, 255, 0, 55)
 		newtab.Position = UDim2.new(0.03 + 0.135 * Tabs, 0, 0.025, 0)
 		newtab.BorderSizePixel = 0
 		newtab.Active = true
