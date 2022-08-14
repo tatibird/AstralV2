@@ -37,7 +37,9 @@ Arraylist = {
         end)
     end,
     Remove = function(Name)
-        arrayFrame:FindFirstChild(Name):Destroy()
+        if arrayFrame:FindFirstChild(Name) then
+            arrayFrame:FindFirstChild(Name):Destroy()
+        end
     end,
 }
 
