@@ -196,7 +196,7 @@ local UILibrary = {
 				end
 			end
 			if Module.Enabled == true then
-				Array.addthing(v.Module.Name)
+				Array.addthing(Module.Name)
 				spawn(function()
 					Module.Function(Module, Module.Dropdowns)
 				end)
@@ -283,9 +283,9 @@ local UILibrary = {
 				end
 				
 				if Module.Enabled == true then
-					Array.addthing(v.Module.Name)
+					Array.addthing(Module.Name)
 				else
-					Array.removething(v.Module.Name)
+					Array.removething(Module.Name)
 				end
 
 				Save(Module)
