@@ -1,4 +1,9 @@
 local array = Instance.new("ScreenGui", game.CoreGui)
+
+spawn(function()
+        array.Enabled = getgenv().Array
+end)
+
 local arrayFrame = Instance.new("Frame", array)
 
 getgenv().Array = array
