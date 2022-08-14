@@ -2,8 +2,8 @@ warn([[
 
 Astral UI Library
 
-Recent fixes:
-added arraylist
+Recent:
+fixed arraylist
 
 ]])
 
@@ -101,6 +101,12 @@ Keybinds = function()
 				else
 					ArrayList.Remove(v.Module.Name)
 				end
+				task.spawn(function()
+					repeat
+						task.wait()
+					until v.Module.Enabled == false
+					ArrayList.Remove(v.Module.Name)
+				end)
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)()
@@ -213,6 +219,12 @@ local UILibrary = {
 			else
 				ArrayList.Remove(Module.Name)
 			end
+			task.spawn(function()
+				repeat
+					task.wait()
+				until Module.Enabled == false
+				ArrayList.Remove(Module.Name)
+			end)
 			if Module.Enabled == true then
 				spawn(function()
 					Module.Function(Module, Module.Dropdowns)
@@ -311,6 +323,13 @@ local UILibrary = {
 					ArrayList.Remove(Module.Name)
 				end
 				
+				task.spawn(function()
+					repeat
+						task.wait()
+					until Module.Enabled == false
+					ArrayList.Remove(Module.Name)
+				end)
+
 				Save(Module)
 			end)
 			newbutton.MouseButton2Click:Connect(function()
