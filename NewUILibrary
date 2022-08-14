@@ -3,7 +3,7 @@ warn([[
 Astral UI Library
 
 Recent:
-fixed arraylist
+fixed arraylist breaking ui
 
 ]])
 
@@ -90,17 +90,19 @@ Keybinds = function()
 			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
 				v.Module.Enabled = not v.Module.Enabled
 				task.wait(.1)
-				if v.Module.Enabled == true then
-					local Suffix
-					for _,D in pairs(v.Module.Dropdowns) do
-						if D[1] == "Selection" then
-							Suffix = D[4][D[3]]
+				task.spawn(function()
+					if v.Module.Enabled == true then
+						local Suffix
+						for _,D in pairs(v.Module.Dropdowns) do
+							if D[1] == "Selection" then
+								Suffix = D[4][D[3]]
+							end
 						end
+						ArrayList.Add(v.Module.Name,Suffix)
+					else
+						ArrayList.Remove(v.Module.Name)
 					end
-					ArrayList.Add(v.Module.Name,Suffix)
-				else
-					ArrayList.Remove(v.Module.Name)
-				end
+				end)
 				task.spawn(function()
 					repeat
 						task.wait()
@@ -208,17 +210,19 @@ local UILibrary = {
 					})
 				end
 			end
-			if Module.Enabled == true then
-				local Suffix
-				for _,D in pairs(Module.Dropdowns) do
-					if D[1] == "Selection" then
-						Suffix = D[4][D[3]]
+			task.spawn(function()
+				if Module.Enabled == true then
+					local Suffix
+					for _,D in pairs(Module.Dropdowns) do
+						if D[1] == "Selection" then
+							Suffix = D[4][D[3]]
+						end
 					end
+					ArrayList.Add(Module.Name,Suffix)
+				else
+					ArrayList.Remove(Module.Name)
 				end
-				ArrayList.Add(Module.Name,Suffix)
-			else
-				ArrayList.Remove(Module.Name)
-			end
+			end)
 			task.spawn(function()
 				repeat
 					task.wait()
@@ -311,18 +315,20 @@ local UILibrary = {
 					Module.Enabled = false
 				end
 
-				if Module.Enabled == true then
-					local Suffix
-					for _,D in pairs(Module.Dropdowns) do
-						if D[1] == "Selection" then
-							Suffix = D[4][D[3]]
+				task.spawn(function()
+					if Module.Enabled == true then
+						local Suffix
+						for _,D in pairs(Module.Dropdowns) do
+							if D[1] == "Selection" then
+								Suffix = D[4][D[3]]
+							end
 						end
+						ArrayList.Add(Module.Name,Suffix)
+					else
+						ArrayList.Remove(Module.Name)
 					end
-					ArrayList.Add(Module.Name,Suffix)
-				else
-					ArrayList.Remove(Module.Name)
-				end
-				
+				end)
+
 				task.spawn(function()
 					repeat
 						task.wait()
