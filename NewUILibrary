@@ -3,7 +3,7 @@ warn([[
 Astral UI Library
 
 Recent fixes:
-scaling stuff 2
+scaling stuff 3
 
 ]])
 
@@ -87,11 +87,6 @@ Keybinds = function()
 			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
 				v.Module.Enabled = not v.Module.Enabled
 				task.wait(.1)
-				if v.Module.Enabled == true then
-					Array.addthing(v.Module.Name)
-				else
-					Array.removething(v.Module.Name)
-				end
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)()
@@ -107,7 +102,7 @@ local UILibrary = {
 		local newtab = Instance.new("Frame", getgenv().GUI)
 		local Line = Instance.new("Frame", newtab)
 		local Title = Instance.new("TextLabel", newtab)
-		newtab.Size = UDim2.new(0, 200, 0, 45)
+		newtab.Size = UDim2.new(0, 180, 0, 55)
 		newtab.Position = UDim2.new(0.03 + 0.135 * Tabs, 0, 0.025, 0)
 		newtab.BorderSizePixel = 0
 		newtab.Active = true
@@ -194,7 +189,6 @@ local UILibrary = {
 				end
 			end
 			if Module.Enabled == true then
-				Array.addthing(Module.Name)
 				spawn(function()
 					Module.Function(Module, Module.Dropdowns)
 				end)
@@ -278,12 +272,6 @@ local UILibrary = {
 					task.wait(0.1)
 					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 					Module.Enabled = false
-				end
-				
-				if Module.Enabled == true then
-					Array.addthing(Module.Name)
-				else
-					Array.removething(Module.Name)
 				end
 
 				Save(Module)
