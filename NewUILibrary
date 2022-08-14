@@ -16,8 +16,6 @@ getgenv().GUI.Enabled = false
 getgenv().SaveName = getgenv().SaveDefault .. ".lua"
 getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
 
-local Array = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Arraylist.lua", true))()
-
 local Loaded = {}
 local Binds = {}
 local Tabs = 0
