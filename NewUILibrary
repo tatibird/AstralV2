@@ -3,7 +3,7 @@ warn([[
 Astral UI Library
 
 Recent fixes:
-bind fix
+arraylist
 
 ]])
 
@@ -15,6 +15,8 @@ getgenv().SaveDefault = "AstralConfig"
 getgenv().GUI.Enabled = false
 getgenv().SaveName = getgenv().SaveDefault .. ".lua"
 getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
+
+local Array = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Arraylist.lua", true))()
 
 local Loaded = {}
 local Binds = {}
@@ -87,6 +89,11 @@ Keybinds = function()
 			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
 				v.Module.Enabled = not v.Module.Enabled
 				task.wait(.1)
+				if v.Module.Enabled == true then
+					Array.addthing(v.Module.Name)
+				else
+					Array.removething(v.Module.Name)
+				end
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)()
@@ -189,6 +196,7 @@ local UILibrary = {
 				end
 			end
 			if Module.Enabled == true then
+				Array.addthing(v.Module.Name)
 				spawn(function()
 					Module.Function(Module, Module.Dropdowns)
 				end)
@@ -273,6 +281,13 @@ local UILibrary = {
 					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 					Module.Enabled = false
 				end
+				
+				if Module.Enabled == true then
+					Array.addthing(v.Module.Name)
+				else
+					Array.removething(v.Module.Name)
+				end
+
 				Save(Module)
 			end)
 			newbutton.MouseButton2Click:Connect(function()
