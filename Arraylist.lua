@@ -66,7 +66,7 @@ array = {
         ArrayListedText.TextColor3 = Color3.fromRGB(220, 220, 220)
         ArrayListedText.BackgroundTransparency = .6
         ArrayListedText.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-        ArrayListedText.Position = UDim2.new(1 - string.len(name) / 39, 0, 0, 0)
+        ArrayListedText.Position = UDim2.new(1 - string.len(name) / 36, 0, 0, 0)
         ArrayListedText.TextXAlignment = "Right"
         ArrayListedText.Name = "artxt"
         ArrayListedText.TextStrokeTransparency = 0.7
@@ -76,7 +76,7 @@ array = {
             local bounds = TextService:GetTextSize(message, ArrayListedText.AbsoluteSize.X * 7e-3 + ArrayListedText.AbsoluteSize.Y * 0.65, "Gotham", size)
             return bounds + Vector2.new(0, 0)
         end
-        ArrayListedText.Size = UDim2.new(string.len(name) / 38, 0, 1.05, 0)
+        ArrayListedText.Size = UDim2.new(string.len(name) / 35, 0, 1.05, 0)
         ArrayListedFrame.LayoutOrder = getTextBounds().X * -1
         coroutine.wrap(function()
             repeat
