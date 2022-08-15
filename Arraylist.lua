@@ -11,7 +11,7 @@ Grid.HorizontalAlignment = "Left"
 
 task.spawn(function()
     repeat
-         task.wait()
+         task.wait(1)
          array.Enabled = getgenv().Array
      until true == false
 end)
