@@ -113,7 +113,7 @@ local function teleport(position)
             },
             [9] = workspace:GetServerTimeNow()
         }
-		game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.ProjectileFire:InvokeServer(unpack(args)) 
+		getremote(debug.getconstants(debug.getupvalues(getmetatable(KnitClient.Controllers.ProjectileController)["launchProjectileWithValues"])[2])):SendToServer(unpack(args)) 
 	else
 		getgenv().notifs.Notify("Player teleport","No telepearl found", 5, Color3.fromHSV(1,1,1))
     end
