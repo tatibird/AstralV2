@@ -1,5 +1,16 @@
 repeat task.wait() until game:IsLoaded()
 task.wait(1)
+
+function getremote(t)
+    for i, v in pairs(t) do
+        if v == "Client" then
+            local tab = t[i + 1]
+            return tab
+        end
+    end
+    return ""
+end
+
 if getgenv().chatmod then
     for i,v in next, getgenv().chatmod.connections do
         v:Disconnect()
