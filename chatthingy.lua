@@ -1,6 +1,8 @@
 repeat task.wait() until game:IsLoaded()
 task.wait(1)
 
+warn([[ minecraft chat loaded ty mistercoolertyper for the cool chat ]])
+
 function getremote(t)
     for i, v in pairs(t) do
         if v == "Client" then
