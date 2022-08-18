@@ -1,11 +1,7 @@
-if not isfolder("fonts") then
-	makefolder("fonts")
-end
-
-if not isfile("fonts/minecraft.ttf") then
-	local MinecraftFont = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Minecraft.ttf", true))()
-	writefile("fonts/minecraft.ttf",MinecraftFont)
-end
+local MinecraftFont = syn.request({
+  Url = "https://raw.githubusercontent.com/Mastadawn/AstralV2/main/minecraft.ttf",
+  Method = "GET"
+}).Body
 
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
@@ -19,7 +15,7 @@ getgenv().HUDColor = Color3.fromRGB(13, 105, 172)
 Drawing.WaitForRenderer()
 
 local TextFont = Font.Register(
-    readfile("fonts/minecraft.ttf"),
+    MinecraftFont,
     { PixelSize = 250, UseStb = false, Scale = false, Bold = false }
 )
 
