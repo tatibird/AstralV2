@@ -1,3 +1,12 @@
+if not isfolder("fonts") then
+	makefolder("fonts")
+end
+
+if not readfile("fonts/minecraft.ttf") then
+	local MinecraftFont = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Minecraft.ttf", true))()
+	makefile("fonts/minecraft.ttf",MinecraftFont)
+end
+
 getgenv().GUI = Instance.new("ScreenGui", game:GetService"CoreGui")
 getgenv().HUDColor = Color3.fromRGB(150, 0, 240)
 getgenv().HUDAnimations = true
