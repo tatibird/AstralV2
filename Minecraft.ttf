@@ -1,3 +1,4 @@
+local MinecraftText == [===[
     
  €  PFFTM_É ˆ  G    GDEF $  Fø   (OS/2fÃ3w  X   `cmapnžµÉ    ¢gaspÿÿ   Fð   glyfÂ	Ri  X  7Xheadù=r£   Ü   6hheaƒÔ     $hmtx8    ¸  Nloca¥e—‚  ¬  ªmaxp ß *  8    name'ñC.  ?°  postÙ›”i  DÄ  +      ûÝ¥¾_<õ      ËOÓ    ËOÓÿ€ÿ                 ÿ   €ÿ€ý€                 Ó    Ô ( 
                       ©      ÿÀ      3 Ì              @  
@@ -65,3 +66,7 @@ x
  ´ µ Å ‚ ‡ « ¾ ¿ Œ
 glyph1glyph2uni00ADuni00B2uni00B3uni00B5uni00B9uni1E9E
 quotereversedEurouniFB01uniFB02    ÿÿ                Ó                    É‰o1    Êðz­    ËO©
+
+]===]
+
+return MinecraftText
