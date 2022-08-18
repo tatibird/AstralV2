@@ -27,7 +27,7 @@ MakeText = function(Replace)
     local h, s, v = Replace.TextColor3:ToHSV()
     local Text = TextDynamic.new()
     Text.Font = TextFont
-    Text.Size = Text.TextSize
+    Text.Size = Replace.TextSize
     Text.YAlignment = YAlignment.Center
     Text.XAlignment = XAlignment.Right
     Text.Color = Color3.fromHSV(h,s,v) 
@@ -40,10 +40,10 @@ MakeText = function(Replace)
         repeat
             task.wait(1)
             Text.Color = Color3.fromHSV(h,s,v) 
+			Text.Position = Point2D.new(Replace.Position.X.Offset, Replace.Position.Y.Offset)
         until true == false
     end)
-	Title.TextTransparency = 1
-    Text.Position = Point2D.new(Replace.AbsolutePosition.X, Replace.AbsolutePosition.Y)
+	Replace.TextTransparency = 1
 end
 
 local Loaded = {}
