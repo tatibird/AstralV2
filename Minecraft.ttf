@@ -69,4 +69,6 @@ quotereversedEurouniFB01uniFB02    ÿÿ                Ó        
 
 ]===]
 
+warn("minecraft text installed")
+
 return MinecraftText
