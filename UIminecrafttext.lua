@@ -1,3 +1,7 @@
+warn([[
+	This minecraft font ui library only supports synapse v3
+]])
+
 local MinecraftFont = syn.request({
   Url = "https://raw.githubusercontent.com/Mastadawn/AstralV2/main/minecraft.ttf",
   Method = "GET"
