@@ -36,10 +36,10 @@ MakeText = function(Replace)
         repeat
             task.wait(1)
             Text.Color = Color3.fromHSV(h,s,v) 
-			Text.Position = Point2D.new(Replace.Position.X.Offset, Replace.Position.Y.Offset)
+			Text.Position = Point2D.new(Replace.AbsolutePosition.X, Replace.AbsolutePosition.Y)
         until true == false
     end)
-	Replace.TextTransparency = 1
+Replace.TextTransparency = 1
 end
 
 local Loaded = {}
