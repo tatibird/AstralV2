@@ -39,7 +39,7 @@ Bedwars = {
     PurchaseItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem,
     AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))["instance"],
     PaintRemote = Client:Get(getremote(debug.getconstants(KnitClient.Controllers.PaintShotgunController.fire))),
-    Eat = Client:Get(bedwars["Consume"]),
+    Eat = Client:Get(Consume),
 }
 
 return Bedwars
