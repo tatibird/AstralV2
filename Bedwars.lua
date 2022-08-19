@@ -13,7 +13,6 @@ function getremote(t)
 end
 local KnitClient = debug.getupvalue(require(lp.PlayerScripts.TS.knit).setup, 6)
 local Client = require(game:GetService"ReplicatedStorage".TS.remotes).default.Client
-
 Bedwars = {
     SwordInfo = {
         [1] = { Name = "wood_sword", Display = "Wood Sword", Rank = 1 },
@@ -23,7 +22,7 @@ Bedwars = {
         [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
         [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
     },
-    Consume = getremote(debug.getconstants(debug.getproto(getmetatable(KnitClient.Controllers.ConsumeController).onEnable, 1))),
+    Consume1 = getremote(debug.getconstants(debug.getproto(getmetatable(KnitClient.Controllers.ConsumeController).onEnable, 1))),
     ChestObserve = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:SetObservedChest"],
     ChestGet = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGetItem"],
     ChestGive = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGiveItem"],
@@ -32,6 +31,7 @@ Bedwars = {
     PurchaseItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem,
     AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))["instance"],
     PaintRemote = Client:Get(getremote(debug.getconstants(KnitClient.Controllers.PaintShotgunController.fire))),
+    Consume2 = Client:Get(bedwars["Consume"]),
 }
 
 return Bedwars
