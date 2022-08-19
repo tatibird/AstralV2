@@ -1,5 +1,11 @@
 repeat task.wait() until game:IsLoaded()
 
+warn([[
+    Bedwars remotes recent changes:
+    Added consume remote,
+    Fixed stuff
+]])
+
 local lp = game:GetService("Players").LocalPlayer
 
 function getremote(t)
