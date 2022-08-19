@@ -23,6 +23,7 @@ Bedwars = {
         [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
         [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
     },
+    Consume = getremote(debug.getconstants(debug.getproto(getmetatable(KnitClient.Controllers.ConsumeController).onEnable, 1))),
     ChestObserve = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:SetObservedChest"],
     ChestGet = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGetItem"],
     ChestGive = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGiveItem"],
