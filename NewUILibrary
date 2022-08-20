@@ -3,7 +3,9 @@ warn([[
 Astral UI Library
 
 Recent:
-fixed arraylist breaking ui
+
+Fixed some saving bugs
+small preformance update
 
 ]])
 
@@ -87,7 +89,7 @@ local Debounce = false
 Keybinds = function()
 	UIS.InputBegan:Connect(function(input)
 		for i,v in pairs(Binds) do
-			if input.KeyCode == Enum.KeyCode[v.Module.Bind] then
+			if v.Module.Bind ~= nil and input.KeyCode == Enum.KeyCode[v.Module.Bind] then
 				v.Module.Enabled = not v.Module.Enabled
 				task.wait(.1)
 				task.spawn(function()
@@ -112,6 +114,7 @@ Keybinds = function()
 				coroutine.wrap(function()
 					v.Module.Function(v.Module,v.Module.Dropdowns)
 				end)()
+				Save(v.Module)
 			end
 		end
 	end)
@@ -227,6 +230,7 @@ local UILibrary = {
 				repeat
 					task.wait()
 				until Module.Enabled == false
+				Save(Module)
 				ArrayList.Remove(Module.Name)
 			end)
 			if Module.Enabled == true then
@@ -238,6 +242,7 @@ local UILibrary = {
 						newModule.BackgroundColor3 = getgenv().HUDColor
 						task.wait()
 					until Module.Enabled == false
+					Save(Module)
 					newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 				end)
 			else newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42) end
@@ -304,6 +309,7 @@ local UILibrary = {
 								task.wait()
 								newModule.BackgroundColor3 = getgenv().HUDColor
 							until Module.Enabled == false
+							Save(Module)
 							newModule.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 						end)
 						Module.Function(Module, Module.Dropdowns)
@@ -333,6 +339,7 @@ local UILibrary = {
 					repeat
 						task.wait()
 					until Module.Enabled == false
+					Save(Module)
 					ArrayList.Remove(Module.Name)
 				end)
 
