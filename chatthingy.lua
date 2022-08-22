@@ -1,7 +1,28 @@
 repeat task.wait() until game:IsLoaded()
-task.wait(1)
+task.wait()
 
 warn([[ minecraft chat loaded ty mistercoolertyper for the cool chat ]])
+
+game.StarterGui:SetCore( 
+    "ChatMakeSystemMessage",  { 
+        Text = [[
+Astral v1
+
+changelog:
+relased
+
+astral command system
+.tprandom
+(requires telepearl)
+.nameclient Astral v1
+(renames the client text can be enabled via HUD Module)
+        ]], 
+        Color = Color3.fromRGB( 255,0,255 ), 
+        Font = Enum.Font.Gotham, 
+        FontSize = Enum.FontSize.Size24
+    } 
+)
+ 
 
 function getremote(t)
     for i, v in pairs(t) do
