@@ -185,7 +185,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
             Box.Text = 'To Chat click here or press "/" key'
             return
         end
-	local command = string.lower(Box.Text)
+	local command = Box.Text
 	if string.find(command,".tp") then
             coroutine.wrap(function()
                 if string.find(command,"random") then
@@ -208,7 +208,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
             return
         end
 	if string.find(command,".nameclient") then
-		local newStr, replaced = string.gsub(command, ".nameclient ", "")
+		local newStr, replaced = string.gsub(Box.Text, ".nameclient ", "")
 		getgenv().ClientName = replaced
 	end
         if Box.Text:lower():find("fuck you") then
