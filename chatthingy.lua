@@ -1,7 +1,7 @@
 repeat task.wait() until game:IsLoaded()
 task.wait()
 
-warn([[ minecraft chat loaded ty mistercoolertyper for the cool chat. ]])
+warn([[ minecraft chat loaded ty mistercoolertyper for the cool chat stuff ]])
 
 game.StarterGui:SetCore( 
     "ChatMakeSystemMessage",  { 
