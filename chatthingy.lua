@@ -209,7 +209,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
         end
 	if string.find(command,".nameclient") then
 		local newStr, replaced = string.gsub(Box.Text, ".nameclient ", "")
-		getgenv().ClientName = replaced
+		getgenv().ClientName = newStr
 	end
         if Box.Text:lower():find("fuck you") then
             newtext = Box.Text:gsub("fuck you", bypasses.fuckyou)
