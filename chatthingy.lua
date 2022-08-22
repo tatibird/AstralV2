@@ -150,22 +150,6 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
         local newtext = ""
         local found = false
         firesignal(lplr.Chatted, "hi")
-        if Box.Text:find(".bind") then
-            local args = Box.Text:split(" ")
-            for i,v in next, shared.GuiLibrary.ObjectsThatCanBeSaved do
-                if i:lower() == args[2]:lower().."optionsbutton" then
-                    if args[3] then
-                        local oldidentity = getidentity()
-                        setidentity(8)
-                        v["Api"]["SetKeybind"]((args[3]:lower() == "none" and "" or args[3]:upper()))
-                        shared.GuiLibrary.CreateNotification("Module Bound", "Successfully Bound "..tostring(i):gsub("OptionsButton", "").."\nTo Key ".. string.upper(args[3]), 5)
-                        setidentity(oldidentity)
-                    end
-                end
-            end
-            Box.Text = 'To Chat click here or press "/" key'
-            return
-        end
         if Box.Text == "swastika" then
             spawn(function()
                 task.wait(0.5)
@@ -180,7 +164,7 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
             Box.Text = 'To Chat click here or press "/" key'
             return
         end
-	local command = Box.Text
+	local command = string.lower(Box.Text)
 	if string.find(command,".tp") then
             coroutine.wrap(function()
                 if string.find(command,"random") then
@@ -202,6 +186,10 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
             Box.Text = 'To Chat click here or press "/" key'
             return
         end
+	if string.find(command,".nameclient") then
+		local newStr, replaced = string.gsub(command, ".nameclient, ", "")
+		getgenv().ClientName = newStr
+	end
         if Box.Text:lower():find("fuck you") then
             newtext = Box.Text:gsub("fuck you", bypasses.fuckyou)
             game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(newtext, "All")
