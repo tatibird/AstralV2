@@ -6,7 +6,7 @@ warn([[ minecraft chat loaded ty mistercoolertyper for the cool chat ]])
 game.StarterGui:SetCore( 
     "ChatMakeSystemMessage",  { 
         Text = [[
-Astral v1
+Astral v2
 
 changelog:
 relased
@@ -208,8 +208,8 @@ getgenv().chatmod.connections[#getgenv().chatmod.connections+1] = Box.FocusLost:
             return
         end
 	if string.find(command,".nameclient") then
-		local newStr, replaced = string.gsub(command, ".nameclient, ", "")
-		getgenv().ClientName = newStr
+		local newStr, replaced = string.gsub(command, ".nameclient ", "")
+		getgenv().ClientName = replaced
 	end
         if Box.Text:lower():find("fuck you") then
             newtext = Box.Text:gsub("fuck you", bypasses.fuckyou)
