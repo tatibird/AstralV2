@@ -51,7 +51,11 @@ Arraylist = {
 }
 
 task.spawn(function()
+    task.wait(4)
     repeat task.wait(1) until Uninjected == true
+    for i,v in pairs(array:GetChildren()) do
+        v:Destroy()
+    end
     array:Destroy()
 end)
 
