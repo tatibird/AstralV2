@@ -50,4 +50,10 @@ Arraylist = {
     end,
 }
 
+task.spawn(function()
+    repeat task.wait(1) until Uninjected == true
+    array:Destroy()
+end)
+
+
 return Arraylist
