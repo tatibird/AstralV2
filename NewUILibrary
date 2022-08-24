@@ -570,4 +570,13 @@ local UILibrary = {
 }
 
 Load()
+
+task.spawn(function()
+	task.wait(4)
+	repeat task.wait(1) until Uninjected == true
+	for i,v in pairs(GUI:GetChildren()) do
+		v:Destroy()
+	end
+end)
+
 return UILibrary
