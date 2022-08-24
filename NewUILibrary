@@ -574,6 +574,10 @@ Load()
 task.spawn(function()
 	task.wait(4)
 	repeat task.wait(1) until Uninjected == true
+	for i,v in pairs(GUI:GetChildren()) do
+		v:Destroy()
+	end
+	task.wait(1)
 	GUI:Destroy()
 end)
 
