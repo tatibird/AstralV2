@@ -11,7 +11,53 @@ getgenv().scriptExample = [==[
     this is very new and buggy so please report and loading bugs
 
     Examples:
-    
+
+TestModule = function(Module,Dropdowns)
+
+	repeat
+		task.wait(1)
+		
+		local ModuleEnabled = Module.Enabled				-- Returns true/false if the module is enabled
+		local Test1Value = Dropdowns.Test1[5] 				-- Gets the current value on the slider
+		local Test2Value = Dropdowns.Test2[3] 				-- Gets the selections value 
+		local Test3Value = Dropdowns.Test3[3] 				-- Gets the true/false value of a toggle dropdown
+		local Test2String = Dropdowns.Test2[4][Test2Value]	-- Gets the string value from a selection module
+
+		local string = Test1Value.." - "..Test2Value.." - "..tostring(Test3Value).." - "..Test2String
+
+		print(string)
+	until Module.Enabled == false
+end
+
+Dropdowns = {
+	Test1 = {
+		"Slider",		-- Type ("Slider","Toggle","Selection")
+		"Test1",		-- Name (string)
+		0,				-- Min value (int)
+		100,			-- Max value (int)
+		50				-- Current value (int)
+	},
+
+	Test2 = {
+		"Selection",	-- Type ("Slider","Toggle","Selection")
+		"Test2",		-- Name (string)
+		1,				-- Current (Selected mode in list)
+		{				-- Options ("Strings" ex: "Test1",)
+			"Test1",
+			"Test2",
+			"Test3",
+		}
+	},
+
+	Test3 = {
+		"Toggle", 		-- Type ("Slider","Toggle","Selection")
+		"Test3",		-- Name (string)
+		false,			-- Status (true/false)
+	},
+
+}
+
+AstralScript.ImportScript("Test1",TestModule,Dropdowns,"Test module")
 ]]
 
 ]==]
