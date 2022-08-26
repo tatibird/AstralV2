@@ -6,6 +6,7 @@ local Bedwars = loadstring(game:HttpGet("https://raw.githubusercontent.com/Masta
 
 getgenv().scriptExample = [==[
 
+
 --[[
     Hello thank you for using astrals scripting system!
     this is very new and buggy so please report and loading bugs
@@ -21,7 +22,7 @@ TestModule = function(Module,Dropdowns)
 		local Test1Value = Dropdowns.Test1[5] 				-- Gets the current value on the slider
 		local Test2Value = Dropdowns.Test2[3] 				-- Gets the selections value 
 		local Test3Value = Dropdowns.Test3[3] 				-- Gets the true/false value of a toggle dropdown
-		local Test2String = Dropdowns.Test2[4][Test2Value]	-- Gets the string value from a selection module
+		local Test2String = Dropdowns.Test2[4][Test2Value]		-- Gets the string value from a selection module
 
 		local string = Test1Value.." - "..Test2Value.." - "..tostring(Test3Value).." - "..Test2String
 
@@ -31,16 +32,16 @@ end
 
 Dropdowns = {
 	Test1 = {
-		"Slider",		-- Type ("Slider","Toggle","Selection")
-		"Test1",		-- Name (string)
+		"Slider",			-- Type ("Slider","Toggle","Selection")
+		"Test1",			-- Name (string)
 		0,				-- Min value (int)
-		100,			-- Max value (int)
+		100,				-- Max value (int)
 		50				-- Current value (int)
 	},
 
 	Test2 = {
-		"Selection",	-- Type ("Slider","Toggle","Selection")
-		"Test2",		-- Name (string)
+		"Selection",			-- Type ("Slider","Toggle","Selection")
+		"Test2",			-- Name (string)
 		1,				-- Current (Selected mode in list)
 		{				-- Options ("Strings" ex: "Test1",)
 			"Test1",
@@ -50,15 +51,16 @@ Dropdowns = {
 	},
 
 	Test3 = {
-		"Toggle", 		-- Type ("Slider","Toggle","Selection")
-		"Test3",		-- Name (string)
-		false,			-- Status (true/false)
+		"Toggle", 			-- Type ("Slider","Toggle","Selection")
+		"Test3",			-- Name (string)
+		false,				-- Status (true/false)
 	},
 
 }
 
 AstralScript.ImportScript("Test1",TestModule,Dropdowns,"Test module")
 ]]
+
 
 ]==]
 
