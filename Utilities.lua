@@ -4,6 +4,18 @@ local origneck = game.Players.LocalPlayer.Character.Head.Neck.C0
 
 local Bedwars = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mastadawn/AstralV2/main/Bedwars.lua", true))()
 
+getgenv().scriptExample = [==[
+
+--[[
+    Hello thank you for using astrals scripting system!
+    this is very new and buggy so please report and loading bugs
+
+    Examples:
+    
+]]
+
+]==]
+
 Utility = {
     Predict = function(player)
         return player.Character.HumanoidRootPart.Position + (player.Character.HumanoidRootPart.Velocity * 0.075)
