@@ -9,7 +9,7 @@ getgenv().scriptExample = [==[
 
 --[[
     Hello thank you for using astrals scripting system!
-    this is very new and buggy so please report and loading bugs
+    this is very new and buggy so please report bugs.
 
     Examples:
 
