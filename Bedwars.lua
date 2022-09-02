@@ -1,1 +1,46 @@
-local E={"jeAfzgQ3jFT3MEk5Lu==";"NFcHhXcCNFc3h/==","8DQ5";"hFQ5NEkF0gAKhp==";"pFcoLSQJhjTH81v38FA7hEy=","8FnX8DXm8ej=";"LDX1hgd70gvB";"jDX1h9kW8eX4hp==","jDXoMu==";"";"QFcHhWk2NFc3h/==";"MFnRN/==";"heQD0EQ7N/==";"jSNHLDvZ8Fn5LDc78eQ3";"jeXR81v9hgKHNej=","pEv50gTYjDQJ8SvB";"QXI=","vgX5";"9EdH8mk2NFc3h/==","veBf8gcohWk2NFc3h/==";"E5nBNwKf8DX1hgp=","8SQ5";"hgKBLDX7hXcCNFc3h/==","pFfBLSvb01TBL1hB";"jDQu8eBV0EvBhXT58SdfhFj=","hEhB81vCGjkB0ETnGgNf8gQCGFNf8gjJ0Fc3h2RCMeX3hgpHhFXJh9KV8SdBGgnBNaNHLDJR8DN/hFQ5vEhB81vCG4QFhgn5Lu==";"hDB3hp==";"pFfBLSvahEp=";"9gnFhgn58SdnP4T+hET5vFQ59EvB8p==";"NETBpgdR8eB5zp==","heBf8gcohXcCNFc3h/==","LFQ5NE/=";"jeAfzgQ3Lu==","8Dc4hQcJ8FvK8eQC";"jSNHLDvd8DhH";"pDQ4NFX3LKkKLDT+0ETB9EvB8p==";"vSdHNgn49eB5";"jeXR81v2Mec5hSQopFcoNadH8eABLi==","pFcoNadH8eABL1I=";"2DXJhp==";"LDdUNaTxMgnV8aQ4hp==";"LDQJ8SvBLu==","LSvH8DQxLSNHLDp=";"vgKBLDX7hWk2NFc3h/==","NFXRN/==","hFQ50FcoLSvf81vC";"hFQ5LadHNel=";"9gnFhgn58SdnP4T+hET5vFBFhjB5hg5=","MEdH8BcCNFc3h/==";"pFfBLSvaMEhB";"2ecV0gAp8eXnhEy=","veBCLeAfzp==";"MgnCNeXo0Fj=";"pgdR8eB5zQdB8gc5hp==";"jSvH8DjijSNHLDp=";"jaQ30FffLFQdNeQJ","9gnFhgn58SdnPBTBNwcmLFQ3NDQ4pFfBLSp=";"0Ev50gTYvgn5MEvn","pFARhgn5"}local function m(w)return E[w-(-699830+757773)]end for w,u in ipairs({{-502256+502257,680117+-680058};{-228134-(-228135),-4128+4161};{8032+-7998;527403-527344}})do while u[-375148+375149]<u[368109-368107]do E[u[-997055+997056]],E[u[-485357-(-485359)]],u[-448237-(-448238)],u[-614131+614133]=E[u[-741111+741113]],E[u[344620-344619]],u[-582770+582771]+(342187+-342186),u[-1008509-(-1008511)]-(495472-495471)end end do local w=string.len local u=math.floor local c=type local e=table.concat local m=E local f=string.sub local j=string.char local R={Z=-396777-(-396780),["9"]=48884-48866,k=-563120-(-563121),w=6116-6112;B=171109+-171072,y=-107811+107819;j=-130020+130040;l=89631-89571,J=-710326+710371,c=16737+-16676;D=835450+-835412,A=506096+-506047;["1"]=-353003+353042;b=-227943+227958;U=-333802+333858;h=478255+-478230;s=-944701+944760;r=-755005-(-755063),S=-936582-(-936637),f=594482+-594449,x=-868411+868442,a=-154725+154732;["+"]=231015+-230975,u=-3168+3216;n=-124004+124061;["5"]=865723+-865671;i=-758232-(-758264),E=979454+-979431;I=-650664-(-650676),C=469090-469039;q=69986+-69924,W=614131+-614129;T=-173221+173234;["4"]=120292+-120256,["2"]=54050+-54031,V=403215-403180,p=-216919-(-216935);["8"]=-53538+53565,X=-1027840+1027845;["3"]=993663+-993613,t=349035+-348972,M=817273+-817247;["0"]=78434+-78410,O=369067+-369057;L=-695642-(-695670),v=630260+-630243,P=-245210-(-245224);g=303103-303081;F=-852474+852528,m=594644-594610;H=-860428-(-860475);N=-355598-(-355627),K=212391+-212338,d=606899+-606890;e=833088-833082;G=188326+-188315,z=-920637+920667;Y=-486511+486554;Q=971091-971070;R=-488367+488408;o=1000685-1000639,["7"]=324906+-324862,["6"]=586610+-586568;["/"]=718710+-718710}local z=table.insert for E=-521904+521905,#m,525041-525040 do local x=m[E]if c(x)=="string"then local c=w(x)local o={}local U=411182-411181 local p=893372-893372 local Q=919228+-919228 while U<=c do local w=f(x,U,U)local e=R[w]if e then p=p+e*(-1002111-(-1002175))^((939581+-939578)-Q)Q=Q+(788153-788152)if Q==-724918+724922 then Q=-286313-(-286313)local w=u(p/(-761850-(-827386)))local c=u((p%(-293291-(-358827)))/(-442350+442606))local e=p%(-340651-(-340907))z(o,j(w,c,e))p=-332138+332138 end elseif w=="="then z(o,j(u(p/(876027+-810491))))if U>=c or f(x,U+(-665588-(-665589)),U+(-128676+128677))~="="then z(o,j(u((p%(-145893+211429))/(962558+-962302))))end break end U=U+(-165285+165286)end m[E]=e(o)end end end repeat task[m(-143548-(-201510))]()until game:IsLoaded()local w=(game:GetService(m(795321+-737371)))[m(-221543+279511)]function getremote(w)for u,c in pairs(w)do if c==m(-193510+251486)then local c=w[u+(-832314+832315)]return c end end return m(-776504-(-834490))end local u=debug[m(612013-554033)]((require(w[m(-225712-(-283689))][m(-904117-(-962110))][m(-963390+1021378)]))[m(-9376+67325)],890300+-890294)local c=(require((game:GetService(m(-1042496+1100497)))[m(-758840+816833)][m(-448046+506005)]))[m(-17693-(-75682))][m(778168+-720192)]local e=getremote(debug[m(-835793-(-893756))](debug[m(767928+-709964)]((getmetatable(u[m(711286+-653330)][m(-733367+791348)]))[m(-707830+765812)],870779+-870778)))Bedwars={[m(372652+-314700)]={[-572530+572531]={[m(743898-685941)]=m(-103787-(-161765)),[m(860138-802169)]=m(831802+-773815),[m(-886972-(-944957))]=-488558-(-488559)},[12192+-12190]={[m(-592271-(-650228))]=m(-616947+674907),[m(-429485+487454)]=m(368862-310890);[m(-928254-(-986239))]=-642676+642678},[395951-395948]={[m(140552-82595)]=m(520240+-462274);[m(-456191-(-514160))]=m(822457+-764462),[m(-91555+149540)]=1042179-1042176};[-201122-(-201126)]={[m(869406-811449)]=m(344581-286633),[m(-876475+934444)]=m(765880+-707884);[m(-852346+910331)]=715642-715638},[-519275-(-519280)]={[m(-158437+216394)]=m(438011-380012),[m(527904-469935)]=m(1054760-996799);[m(-825722+883707)]=139497-139492};[346161-346155]={[m(540180-482223)]=m(-829501-(-887484));[m(804857+-746888)]=m(-525810-(-583794));[m(-316778+374763)]=-665013+665019}};[m(-615283+673283)]=(game:GetService(m(746679+-688678)))[m(-124516+182474)][m(-924383-(-982334))][m(-355122-(-413101))][m(-793388-(-851386))][m(885371+-827374)][m(-1012351+1070325)],[m(429357+-371412)]=(game:GetService(m(569778+-511777)))[m(-580622-(-638580))][m(-624883+682834)][m(839027-781048)][m(55010+2988)][m(1042752+-984755)][m(-34249-(-92195))];[m(-549617+607584)]=(game:GetService(m(-598051-(-656052))))[m(-40317-(-98275))][m(553073+-495122)][m(906165-848186)][m(-578162+636160)][m(-273320+331317)][m(-834042+892007)],[m(-390156-(-448110))]=(game:GetService(m(914700-856699)))[m(-377543-(-435501))][m(627059+-569108)][m(-5863-(-63842))][m(-332714+390712)][m(-228188-(-286185))][m(571762+-513808)],[m(155621+-97650)]=((game:GetService(m(-1025920+1083921))):FindFirstChild(m(20769+37233)))[m(197823-139876)],[m(838970+-780997)]=(game:GetService(m(-931950-(-989951))))[m(1088614-1030656)][m(166117+-108166)][m(-704253-(-762232))][m(423277+-365279)][m(719414+-661417)][m(-158982-(-216935))],[m(-112093-(-170085))]=(c:Get(getremote(debug[m(285202-227239)]((getmetatable(u[m(-545841+603797)][m(286761+-228771)]))[m(21857+36118)]))))[m(649780+-591810)],[m(-383276+441267)]=c:Get(getremote(debug[m(-552776-(-610739))](u[m(825914+-767958)][m(-191877-(-249832))][m(13239-(-44705))])));[m(-163229-(-221223))]=c:Get(e)}return Bedwars
+repeat task.wait() until game:IsLoaded()
+
+warn([[
+    
+    Bedwars remotes recent changes:
+    Added consume remote (maybe?)
+]])
+
+local lp = game:GetService("Players").LocalPlayer
+
+function getremote(t)
+    for i, v in pairs(t) do
+        if v == "Client" then
+            local tab = t[i + 1]
+            return tab
+        end
+    end
+    return ""
+end
+
+local KnitClient = debug.getupvalue(require(lp.PlayerScripts.TS.knit).setup, 6)
+local Client = require(game:GetService"ReplicatedStorage".TS.remotes).default.Client
+local Consume = getremote(debug.getconstants(debug.getproto(getmetatable(KnitClient.Controllers.ConsumeController).onEnable, 1)))
+
+Bedwars = {
+    SwordInfo = {
+        [1] = { Name = "wood_sword", Display = "Wood Sword", Rank = 1 },
+        [2] = { Name = "stone_sword", Display = "Stone Sword", Rank = 2 },
+        [3] = { Name = "iron_sword", Display = "Iron Sword", Rank = 3 },
+        [4] = { Name = "diamond_sword", Display = "Diamond Sword", Rank = 4 },
+        [5] = { Name = "emerald_sword", Display = "Emerald Sword", Rank = 5 },
+        [6] = { Name = "rageblade", Display = "Rage Blade", Rank = 6 },
+    },
+    ChestObserve = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:SetObservedChest"],
+    ChestGet = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGetItem"],
+    ChestGive = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged["Inventory:ChestGiveItem"],
+    GroundHit = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.GroundHit,
+    AbilityRemote = game:GetService("ReplicatedStorage"):FindFirstChild("events-@easy-games/game-core:shared/game-core-networking@getEvents.Events").useAbility,
+    PurchaseItem = game:GetService("ReplicatedStorage").rbxts_include.node_modules.net.out._NetManaged.BedwarsPurchaseItem,
+    AttackRemote = Client:Get(getremote(debug.getconstants(getmetatable(KnitClient.Controllers.SwordController)["attackEntity"])))["instance"],
+    PaintRemote = Client:Get(getremote(debug.getconstants(KnitClient.Controllers.PaintShotgunController.fire))),
+    Eat = Client:Get(Consume),
+    ["Projectile"] = Client:Get(getremote(debug.getconstants(debug.getupvalues(getmetatable(KnitClient.Controllers.ProjectileController)["launchProjectileWithValues"])[2]))),
+}
+
+return Bedwars
